@@ -8,14 +8,31 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
+        # Adding model 'QuizzProfile'
+        db.create_table('quizz_quizzprofile', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'])),
+            ('quiz_started', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
+            ('quiz_completed', self.gf('django.db.models.fields.DateTimeField')(blank=True)),
+        ))
+        db.send_create_signal('quizz', ['QuizzProfile'])
 
-        # Changing field 'FacebookProfile.access_token'
-        db.alter_column('facebook_profiles_facebookprofile', 'access_token', self.gf('django.db.models.fields.CharField')(max_length=256))
+        # Adding M2M table for field quiz_answers on 'QuizzProfile'
+        db.create_table('quizz_quizzprofile_quiz_answers', (
+            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
+            ('quizzprofile', models.ForeignKey(orm['quizz.quizzprofile'], null=False)),
+            ('answerchoice', models.ForeignKey(orm['quizz.answerchoice'], null=False))
+        ))
+        db.create_unique('quizz_quizzprofile_quiz_answers', ['quizzprofile_id', 'answerchoice_id'])
+
 
     def backwards(self, orm):
+        # Deleting model 'QuizzProfile'
+        db.delete_table('quizz_quizzprofile')
 
-        # Changing field 'FacebookProfile.access_token'
-        db.alter_column('facebook_profiles_facebookprofile', 'access_token', self.gf('django.db.models.fields.CharField')(max_length=64))
+        # Removing M2M table for field quiz_answers on 'QuizzProfile'
+        db.delete_table('quizz_quizzprofile_quiz_answers')
+
 
     models = {
         'auth.group': {
@@ -54,16 +71,36 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'facebook_profiles.facebookprofile': {
-            'Meta': {'object_name': 'FacebookProfile'},
-            'access_token': ('django.db.models.fields.CharField', [], {'max_length': '256'}),
-            'date_added': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
-            'details': ('django.db.models.fields.TextField', [], {'default': "'{}'"}),
-            'friends': ('django.db.models.fields.TextField', [], {'default': "'{}'"}),
+        'quizz.answerchoice': {
+            'Meta': {'object_name': 'AnswerChoice'},
+            'comment': ('django.db.models.fields.CharField', [], {'max_length': '1024'}),
+            'date_uploaded': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'interests': ('django.db.models.fields.TextField', [], {'default': "'{}'"}),
+            'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '1024', 'blank': 'True'}),
+            'question': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['quizz.Question']"}),
+            'text': ('django.db.models.fields.CharField', [], {'max_length': '256'})
+        },
+        'quizz.question': {
+            'Meta': {'object_name': 'Question'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '256'}),
+            'order': ('django.db.models.fields.IntegerField', [], {}),
+            'question': ('django.db.models.fields.CharField', [], {'max_length': '1024'}),
+            'quizz': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['quizz.Quizz']"})
+        },
+        'quizz.quizz': {
+            'Meta': {'object_name': 'Quizz'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '256'})
+        },
+        'quizz.quizzprofile': {
+            'Meta': {'object_name': 'QuizzProfile'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'quiz_answers': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['quizz.AnswerChoice']", 'symmetrical': 'False'}),
+            'quiz_completed': ('django.db.models.fields.DateTimeField', [], {'blank': 'True'}),
+            'quiz_started': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'user': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"})
         }
     }
 
-    complete_apps = ['facebook_profiles']
+    complete_apps = ['quizz']

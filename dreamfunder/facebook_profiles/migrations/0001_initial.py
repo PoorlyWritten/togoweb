@@ -8,6 +8,16 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
+        # Adding model 'FacebookProfile'
+        db.create_table('facebook_profiles_facebookprofile', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'])),
+            ('date_added', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
+            ('friends', self.gf('django.db.models.fields.TextField')(default='{}')),
+            ('interests', self.gf('django.db.models.fields.TextField')(default='{}')),
+            ('details', self.gf('django.db.models.fields.TextField')(default='{}')),
+            ('access_token', self.gf('django.db.models.fields.CharField')(max_length=256)),
+        ))
         db.send_create_signal('facebook_profiles', ['FacebookProfile'])
 
 
@@ -55,7 +65,7 @@ class Migration(SchemaMigration):
         },
         'facebook_profiles.facebookprofile': {
             'Meta': {'object_name': 'FacebookProfile'},
-            'access_token': ('django.db.models.fields.CharField', [], {'max_length': '64'}),
+            'access_token': ('django.db.models.fields.CharField', [], {'max_length': '256'}),
             'date_added': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'details': ('django.db.models.fields.TextField', [], {'default': "'{}'"}),
             'friends': ('django.db.models.fields.TextField', [], {'default': "'{}'"}),

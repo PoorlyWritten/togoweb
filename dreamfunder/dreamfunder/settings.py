@@ -138,6 +138,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'widget_tweaks',
     'avatar',
+    'quizz',
     'storages',
     'django_browserid',
     'social_auth',

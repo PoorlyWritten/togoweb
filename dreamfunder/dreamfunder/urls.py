@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.auth.views import logout_then_login
-from .views import HomeTemplateView
+from .views import HomeTemplateView, FBchannelView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'dreamfunder.views.home', name='home'),
     url(r'^$', HomeTemplateView.as_view(), name='home'),
+    url(r'^fb_channel.html$', FBchannelView.as_view()),
     url(r'^home$', HomeTemplateView.as_view()),
     # url(r'^dreamfunder/', include('dreamfunder.foo.urls')),
     url(r'', include('social_auth.urls')),
