@@ -1,0 +1,132 @@
+
+$bodyMaxWidth: 1280px;
+$bodyMinWidth: 842px;
+body {
+	max-width:$bodyMaxWidth;
+	min-width:$bodyMinWidth;
+	margin:0 auto;
+}
+
+
+
+
+.social-links {
+text-align:right;
+position:absolute;
+right:30px;
+top:15px;
+z-index:5000;
+
+	a {
+	color:$white;
+	display:inline-block;
+	margin-left:20px;
+	font-size:13px;
+		&:hover {
+		@include transition(.3s all 'ease-in');
+		}
+	}
+}
+
+.button {
+
+	&.primary {
+		display:inline-block;
+	background-color:$mainColor;
+	@include border-radius(5px);
+	//@include background( linear-gradient(bottom, $mainColor, $mainColorHighlight) );
+	// needs latest Compass, add '@import "compass"' to your scss
+	@include filter-gradient($mainColor, $mainColorHighlight, vertical); // IE6-9
+	@include background-image(linear-gradient(top,  $mainColorHighlight 0%, $mainColor 36%));
+
+	@include box-shadow(0 0 15px rgba(0,0,0,.5));
+	color:$black;
+	text-shadow: 0 .125em .125em rgba(255,255,255,.5);
+	font-weight:normal;
+	font-size:23px;
+	min-width:240px;	
+	padding-top:.75em;
+	padding-bottom:.75em;
+	font-weight:500;
+
+		&:hover {
+		//@include background( linear-gradient(top, $mainColor, $mainColorHighlight) );
+		@include filter-gradient($mainColorHighlight, $mainColor, vertical); // IE6-9
+		@include background-image(linear-gradient(top,  $mainColorHighlight 0%, $mainColor 66%));
+		@include transition(.3s all 'ease-in');
+		}
+
+		&.emphasis-bright {
+		color:$white;
+		}
+	}
+
+	&.simple {
+	background:$mainColor;
+	@include box-shadow(none);
+	text-shadow:none;
+	}
+
+	&.medium {
+	font-size:17px;
+	padding-top:.65em;
+	padding-bottom:.65em;
+	min-width:auto;
+	}
+
+
+}
+
+[role=main] {
+
+	>article:last-child {
+	padding-bottom:60px;
+	}
+}
+
+.columns.no-padding {
+padding-left:0;
+padding-right:0;
+}
+
+.emphasis-font {
+font-family:$alternateFontFamily;
+}
+
+.emphasis-color {
+color:$altColor
+}
+
+.dark-section {
+background-color:$dark
+}
+
+.dark-textured-section {
+background:url(/images/dark-texture-bg.png) repeat $dark;
+
+}
+
+
+[role=contentinfo] {
+background:#404040;
+margin:0 0 0 0;
+
+	a.button.primary {
+	margin:-40px 0 30px 0;
+	}
+
+	p {
+	color:#D9DADC;
+	}
+
+	a {
+	color:#D9DADC;
+	display:inline-block;
+	margin-left:10px;
+	}
+
+	.lower {
+	background:$dark;
+	padding:20px 0 4px 0;
+	}
+}

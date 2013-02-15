@@ -1,0 +1,48 @@
+
+.reveal-modal {
+@include border-radius(5px);
+background: rgba(255,255,255,.4);
+padding:5px !important;
+
+	p {
+	color:#777;
+	font-weight:300;
+	}
+
+	&.fixed {
+	position:fixed;
+	}
+
+	&.expand-limit {
+	min-width:$bodyMinWidth;
+	}
+
+	.wrap {
+	background:$white;
+	@include border-radius(3px);
+	//margin:-13px 0 -13px 0;
+	margin:0;
+	padding:30px;
+	}
+
+	.modal-title {
+	font-family: $alternateFontFamilyBold;
+	//font-weight:bold;
+	text-align:center;
+	font-size:28px;
+	margin:.5em 0 1em 0;
+	}
+
+	.modal-process-status {
+	border-top:1px solid #eee;
+	border-bottom:1px solid #eee;
+	padding:.2em 0;
+	font-weight:300;
+	color:#999;
+	text-transform:uppercase;
+	text-align:center;
+	}
+
+
+
+}

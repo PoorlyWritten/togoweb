@@ -1,7 +1,473 @@
-.panel.prague { 
-background: url('http://www.daily-hdr.com/wp-content/uploads/2012/09/My-first-night-shot-of-Prague-Castle.jpg') no-repeat center center fixed;
--moz-background-size: cover;
--webkit-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-} 
+
+.hero {
+min-height:600px;
+background:$dark;
+margin-bottom:0; //over-ride orbit CSS
+
+	
+	.content {
+	position:relative;
+	}
+
+	img.bg {
+	position:absolute;
+	z-index:-1;
+	top:-15px
+	}
+
+	//Restyle Orbit bullets
+	&.with-bullets{
+	margin-bottom:0;
+	}
+
+	&.with-bullets+.slider-nav+.orbit-bullets {
+	bottom:3px !important;
+
+		> li {
+		background:rgba(255,255,255,.5);
+		@include box-shadow(0 1px 4px rgba(0,0,0,.4));
+		@include border-radius(100%);
+		width:10px;
+		height:10px;
+		margin:0 5px;
+		}
+
+		> li.active {
+		background:$white;
+		}
+	}
+
+	//WIP
+	&+.slider-nav{
+
+		.left,
+		.right {
+		//background:rgba(0,0,0,.4) !important;
+		background:none !important;
+
+			&::after {
+			color:$white;
+			background:red;
+			font-size:32px !important;
+			font-family:$iconFontFamily;
+			content:"\f053" !important;
+			//content:"backers" !important;
+			height:1em;
+			}
+		}
+
+		.left {
+		margin-left:30px;
+		}
+
+		.right {
+		margin-right:30px
+		}
+	}
+
+}
+
+
+.hero-sub-content {
+text-align:center;
+padding-top:40px;
+min-height:600px;
+
+	// .logo {
+	// font-family:$alternateFontFamily;
+	// color:$white;
+	// font-size:33px;
+	// margin-bottom:40px;
+	// }
+
+	.logo {
+	display:block;
+	width:180px;
+	height:54px;
+	text-indent:-300px;
+	font-size:0;
+	background:url(/images/logo.png) no-repeat 0 0;
+	margin:0 auto 60px auto;
+	}
+
+	.hero-title,
+	.hero-subtitle {
+	color:$white;
+	font-size:52px;
+	text-shadow:0 0 18px rgba(0,0,0,.75);
+	}
+
+	.hero-title {
+	line-height:0.8em;
+	}
+
+	.hero-subtitle {
+	font-size:39px;
+	font-family:$standardFontFamily;
+	text-transform:lowercase;
+	font-weight:300;
+	letter-spacing:-1px
+	}
+
+	.primary.button {
+	margin-top:40px;
+	}
+}
+
+.hero-testimonial {
+position:absolute;
+background:rgba(255,255,255,.05);
+@include border-radius(5px);
+@include box-shadow(0 0 18px rgba(0,0,0,.4));
+padding:5px;
+bottom:20px;
+right:-5px;
+width:360px;
+
+
+	> .content {
+	padding:15px 30px 10px 30px;
+	background:rgba(255,255,255,.75);
+	@include border-radius(5px 0 0 5px);
+	}
+
+	.image {
+	position: absolute;
+	right:8px;
+	top:-20px;
+	padding:4px;
+	background:rgba(255,255,255,.4);
+	width:64px;
+	height:64px;
+	@include border-radius(100%);
+	@include box-shadow(0 0 3px rgba(255,255,255,.4));
+
+		>img {
+		@include border-radius(100%);
+		display:block;
+		width:100%;
+		height:100%;
+		}
+	}
+
+	.title {
+	font-family:$standardFontFamily;
+	font-size:16px;
+	font-weight:bold;
+	text-shadow:0 1px 0 $white;
+	margin-top:0;
+	}
+
+	.quote {
+	font-size:13px;
+
+		p {
+		margin:.5em 0 .5em 0;
+		line-height:1.2em;
+		text-shadow:0 1px 0 $white;
+		}
+
+		p:first-child + p{
+		position:relative;
+
+			&::before {
+				content:"";
+				display:block;
+				width:100%;
+				height:2px;
+				background: rgba(255,255,255,.4);
+				border-top:1px solid rgba(0,0,0,.6);
+				margin-bottom:7px;
+			}
+		}
+	}
+
+	.helping-users {
+		img {
+		display:inline-block;
+		width:26px;
+		height:26px;
+		@include border-radius(100%);
+		border:2px solid rgba(255,255,255,.35);
+
+		}
+	}
+}
+
+
+.process {
+background:$dark;
+padding-top:10px;
+padding-bottom:10px;
+}
+
+
+[class*=process-] {
+position:relative;
+}
+
+.process-arrow-after {
+	margin-bottom:42px;
+
+	&::after {
+	content:"";
+	background:url(/images/process-arrow.png) no-repeat;
+	width:112px;
+	height:112px;
+	margin:0 0 0 -56px;
+	display:block;
+	position:absolute;
+	bottom:-60px;
+	left:50%;
+	}
+}
+
+.process-arrow-before {
+	margin-top:84px;
+
+	&::after {
+	content:"";
+	background:url(/images/process-arrow.png) no-repeat;
+	width:112px;
+	height:112px;
+	margin:0 0 0 -56px;
+	display:block;
+	position:absolute;
+	top:-60px;
+	left:50%;
+	}
+	
+	&.process-arrow-shift-left::after {
+	margin-left:-300px;
+	}
+}
+
+.dreams {
+margin:20px 0 40px 0;
+
+	&.simple {
+
+		.dream {
+		padding:0;
+		@include box-shadow(none);
+
+			&:hover,
+			.large-wrap,
+			.large {
+				@include transform(none);
+				@include box-shadow(none);
+			}
+		}
+
+	}
+
+	&.dream-type > .row{
+	margin-bottom:0 !important;
+	}
+
+	.dream {
+	display:block;
+	margin:20px 0;
+	padding:10px 10px 1px 10px;
+	@include box-shadow(0 0 3px rgba(0,0,0,.4));
+	color:$linkColor;
+	background:$white;
+
+		&.selected {
+		color:$white;
+		@include box-shadow(0 0 15px $linkColor);
+		border:3px solid $linkColor;
+		//margin-bottom:0;
+
+			.text::after {
+			display:none !important;
+			}
+
+			.large {
+			margin-bottom:0;
+			}
+		}
+
+		&:hover {
+		color:$white;
+		@include transform(scale(1.02))
+		}
+
+		.large-wrap {
+		@include transform(rotate(4deg) translate(6px,-6px) );
+		@include box-shadow(0 0 3px rgba(0,0,0,.4));
+		background:$white;
+		}
+
+		.large {
+		@include transform(rotate(-4deg) translate(-6px,6px) );
+		-webkit-backface-visibility:hidden; //Fix jaggies
+		//@include box-shadow(0 0 2px rgba(0,0,0,.4));
+		position:relative;
+		overflow:hidden;
+		margin-bottom:10px;
+
+			img {
+			display:block;
+			width:100%;
+			background:#00AFA1
+			}
+
+			.text {
+			display:block;
+			position: absolute;
+			width:100%;
+			bottom:0;
+			left:0;
+			-webkit-font-smoothing: subpixel-antialiased; //correcting blurry text in webkit
+			background:rgba(0,0,0,.85);
+			padding:20px 15px 15px 15px;
+			font-size:15px;
+			font-family:$alternateFontFamily;
+			text-align:left;
+
+				&::after {
+				content:"";
+				display:block;
+				background:url(/images/more-arrow-2.png);
+				width:32px;
+				height:32px;
+				position:absolute;
+				bottom:11px;
+				right:10px;
+				}
+			}
+		}
+
+		.small {
+		position:relative;
+
+			img {
+			display:block;
+			width:48%;
+
+				&:last-child {
+				position:absolute;
+				right:0;
+				top:0;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+.dream-profile {
+border:3px solid $linkColor;
+@include border-radius(2px);
+padding:15px 30px 30px 30px;
+@include box-shadow(0 0 18px rgba(0,0,0,.5));
+text-align:left;
+
+	.dream-pretitle {
+	font-family:$standardFontFamily;
+	text-transform:uppercase;
+	font-weight:300;
+	color:$linkColor;
+	font-size:26px;
+
+		&::before {
+		content:"“";
+		font-size:94px;
+		line-height:0em;
+		display:inline-block;
+		margin-bottom:-10px;
+		color:$altColor2;
+		font-family:$standardFontFamily;
+		//font-weight:bold;
+		}
+	}
+
+	.dream-title {
+	font-size:50px;
+	color:$white;
+	font-family:$standardFontFamily;
+	font-weight:200;
+	letter-spacing:-1px;
+	margin-top:-12px;
+	margin-bottom:30px;
+
+		&::after {
+		content:"”";
+		font-size:60px;
+		line-height:-0.5em;
+		display:inline-block;
+		margin-top:-30px;
+		color:$linkColor;
+		font-family:$standardFontFamily;
+		}
+	}
+
+	.dreamer-avatar {
+	display:block;
+	width:100%;
+	}
+
+	.dreamer-title {
+	color:$linkColor;
+	font-weight:500;
+	font-size:25px;
+	font-family:$standardFontFamily;
+	}
+
+	.dreamer-subtitle {
+	color:#999;
+	font-size:12px;
+	font-family:$standardFontFamily;
+	margin-top:-10px;
+	margin-bottom:30px;
+
+		[class*=icon-] {
+		color:$white;
+		}
+	}
+
+	.dream-total {
+	color:$linkColor;
+	font-weight:bold;
+	font-size:25px;
+	font-family:$standardFontFamily;
+	}
+
+	.dream-total-percentage {
+	width:75%;
+	border:1px solid #555;
+	height:16px;
+	margin-top:-6px;
+	@include box-shadow(inset 2px 2px 12px rgba(0,0,0,.9), 0 0 8px rgba(255,255,255,.18));
+	@include border-radius(2px);
+	background:$dark;
+	position:relative;
+
+		.percentage-complete {
+		background-color: #0097d4; // Old browsers
+		@include filter-gradient(#0097d4, #00b3ad, horizontal); // IE6-9
+		@include background-image(linear-gradient(left,  #0097d4 0%,#00b3ad 100%));
+		font-size:0;
+		height:14px;
+		@include border-radius(1px 0 0 1px);
+		}
+	}
+
+	.dream-time {
+	color:#777;
+	font-size:13px;
+	line-height:1.5em;
+
+		.emphasis-bright {
+		color:#fff;
+		}
+	}
+
+	.fund-button {
+	margin-top:40px;
+	}
+
+}
