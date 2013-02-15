@@ -47,51 +47,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 </script>
-    <div class="contain-to-grid top-bar-wrap fixed">
-      <nav class="top-bar">
-        <ul>
-          <!-- Title Area -->
-          <li class="name">
-            <h1>
-              <a href="/" class="logo">
-                <img src="/images/logobeta.png"/>
-              </a>
-            </h1>
-          </li>
-          <li class="toggle-topbar"><a href="#"></a></li>
-        </ul>
-        <section>
-          <!-- Right Nav Section -->
-          <ul class="right">
-          {% if user.is_staff %}
-          <li><a href="/admin/">Admin</a></li>
-          {% endif %}
-              {% comment %}
-            <li class="has-dropdown">
-              <a href="#" class="activity">
-                Activity
-              </a>
-              {% endcomment %}
-{% if not user.is_authenticated %}
-<li>
-<a href="{% url socialauth_begin 'facebook' %}?{{ redirect_querystring }}">Facebook Connect</a>
-</li>
-{% endif %}
-        </ul>
-      </section>
-
-    </nav>
-  </div>
-</div>
-{% block header %}
-{% if heading %}
-<div class="row">
-    <div class="twelve columns">
-        <h2>{{ heading }}</h2>
-    </div>
-</div>
-{% endif %}
-{% endblock %}
 
 {% block content %}
 <div class="row">
@@ -120,28 +75,39 @@
         <div class="row">*<div class="fb-send" data-href="http://example.com" data-font="trebuchet ms"></div></div>
     </div>
 </div>
-{% endblock %}*
+{% endblock %}
 
   
   <!-- Footer -->
-  
-  <footer class="row">
-    <div class="twelve columns">
-      <hr />
-      <div class="row">
-        <div class="six columns">
-          <p>&copy; Copyright OneLeap Ltd 2013</p>
+  {% block footer %}
+    <footer role="contentinfo">
+        
+        <div class="row">
+            <div class="eight columns centered tc">
+                
+                <a href="" class="button primary" data-reveal-id="signupModal-1">Sign Up!</a>
+
+                <p>Like Us! Share the love!</p>
+                <p>
+                    <a href="http://twitter.com/dreamfunder" target="_blank"><i class="icon-twitter-sign icon-large"></i> Twitter</a>
+                    <a href="http://facebook.com/dreamfunder" target="_blank"><i class="icon-facebook-sign icon-large"></i> Facebook</a>
+                    <a href="http://pinterest.com/dreamfunder" target="_blank"><i class="icon-pinterest icon-large"></i> Pinterest</a>
+                </p>
+
+            </div>
         </div>
-        <div class="six columns">
-          <ul class="link-list right">
-              {% comment %}<li><a href="/pricing">Pricing</a></li>{% endcomment %}
-            <li><a href="mailto:contacts@intros.to">Contact Us</a></li>
-            <li><a href="https://oneleap.to">OneLeap.to</a></li>
-          </ul>
-        </div>
-      </div>
-    </div> 
-  </footer>
+
+        <div class="lower">
+            <div class="row">
+                <div class="twelve columns">
+                    <p>
+                        © 2013 Kuoni.com
+                    </p>
+                </div>
+            </div>      
+        </div>  
+</footer>
+{% endblock %}
 
     <!-- Included JS Files (Uncompressed) -->
     <script src="/javascripts/foundation/jquery.js"></script>

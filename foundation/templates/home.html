@@ -7,6 +7,14 @@
             <div class="twelve columns no-padding">
 
                 <div class="social-links">
+                    {% if not user.is_authenticated %}
+                    <a href="{% url socialauth_begin 'facebook' %}?{{ redirect_querystring }}">Facebook Connect</a>
+                    {% else %}
+                    <a href="/logout/">Logout</a>
+                    {% if user.is_staff %}
+                    <a href="/admin/">Admin</a>
+                    {% endif %}
+                    {% endif %}
                     <a href="http://twitter.com/dreamfunder" target="_blank"><i class="icon-twitter-sign icon-large"></i> Twitter</a>
                     <a href="http://facebook.com/dreamfunder" target="_blank"><i class="icon-facebook-sign icon-large"></i> Facebook</a>
                     <a href="http://pinterest.com/dreamfunder" target="_blank"><i class="icon-pinterest icon-large"></i> Pinterest</a>
@@ -275,31 +283,291 @@
 
     </section>
 
-    <footer role="contentinfo">
+{% endblock %}
+
+{% block modals %}
+<div id="signupModal-1" class="reveal-modal fixed expand expand-limit">
+  <div class="wrap">
+      <h2 class="modal-title">Sign Up!</h2>
+      <p class="modal-process-status">
+        Step 2 of 3
+      </p>
+
+      <p class="lead tc">Connect with Facebook</p>
+      <p class="tc"><a href="" data-reveal-id="signupModal-2"><img src="/images/facebook-button.png" alt=""/></a></p>
+      <!-- <a class="close-reveal-modal">&#215;</a> -->
+
+      <p class="tc">or signup with your <a href="" data-reveal-id="signupModal-manual">email address</a></p>
+    </div>
+</div>
+
+<div id="signupModal-2" class="reveal-modal fixed expand expand-limit">
+  <div class="wrap">
+      <h2 class="modal-title">Your Dream Trip</h2>
+      <p class="modal-process-status">
+        Step 2 of 3
+      </p>
+
+      <p class="lead tc">What special occasion would you like to use DreamFunder for?</p>
+
+
         
-        <div class="row">
-            <div class="eight columns centered tc">
-                
-                <a href="" class="button primary" data-reveal-id="signupModal-1">Sign Up!</a>
 
-                <p>Like Us! Share the love!</p>
-                <p>
-                    <a href="http://twitter.com/dreamfunder" target="_blank"><i class="icon-twitter-sign icon-large"></i> Twitter</a>
-                    <a href="http://facebook.com/dreamfunder" target="_blank"><i class="icon-facebook-sign icon-large"></i> Facebook</a>
-                    <a href="http://pinterest.com/dreamfunder" target="_blank"><i class="icon-pinterest icon-large"></i> Pinterest</a>
-                </p>
+            <form class="">
+                <div class="row">
+                <div class="four columns centered">
+<!--            
+                          
+                      <select style="display:none;" id="customDropdown">
+                        <option SELECTED>Anniversary</option>
+                        <option>Birthday</option>
+                        <option>Gap Year</option>
+                      </select>
+                      <div class="custom dropdown">
+                        <a href="#" class="current">
+                          Anniversary
+                        </a>
+                        <a href="#" class="selector"></a>
+                        <ul>
+                          <li class="icon-heart"><i class=""></i> Anniversary</li>
+                          <li><i class="icon-gift"></i> Birthday</li>
+                          <li><i class="icon-globe"></i> Gap Year</li>
+                        </ul>
+                      </div>
 
-            </div>
-        </div>
+                     -->
 
-        <div class="lower">
-            <div class="row">
-                <div class="twelve columns">
-                    <p>
-                        © 2013 Kuoni.com
-                    </p>
+                     <div class="tc">
+                          <select id="tripTypeDropdown" style="margin:0 auto;" tabindex="1" class="pretty dk">
+                            <option SELECTED>Anniversary</option>
+                            <option>Birthday</option>
+                            <option>Gap Year</option>
+                          </select>
+                     </div>
+
+<!--                        <div class="row">
+                            <div class="three columns">
+                                <label for="tripTypeDropdown">Trip Type:</label>
+                            </div>
+                            <div class="five columns">
+
+                            </div>
+                        </div> -->
+
+
                 </div>
-            </div>      
-        </div>  
-</footer>
+                  </div>
+            </form>
+
+    </div>
+</div>
+
+
+<div id="signupModal-3" class="reveal-modal expand expand-limit">
+  <div class="wrap">
+      <h2 class="modal-title">Your Dream Trip</h2>
+      <p class="modal-process-status">
+        Step 3 of 3
+      </p>
+
+      <p class="lead tc">What type of traveller are you?</p>
+
+            <form class="">
+
+
+
+                <div class="dreams dream-type simple">
+
+                        <div class="row">
+                            <div class="four columns">
+                                <a class="dream selected" href="#">
+                                    <div class="large-wrap">
+                                        <div class="large">
+                                            <img src="/images/dream-large.jpg" alt="">
+                                            <div class="text">
+                                                Cultural
+                                            </div>
+                                        </div>
+                                    </div>                          
+                        
+                                </a>
+                            </div>                      
+                            <div class="four columns">
+                                <a class="dream" href="#">
+                                    <div class="large-wrap">
+                                        <div class="large">
+                                            <img src="/images/dream-large.jpg" alt="">
+                                            <div class="text">
+                                                Adventurous
+                                            </div>
+                                        </div>
+                                    </div>      
+                        
+                                </a>
+                            </div>
+
+                            <div class="four columns">
+                                <a class="dream" href="#">
+                                    <div class="large-wrap">
+                                        <div class="large">
+                                            <img src="/images/dream-large.jpg" alt="">
+                                            <div class="text">
+                                                Tropical
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><!-- a row of .dreams -->
+
+                        <div class="row">
+                            <div class="four columns">
+                                <a class="dream" href="#">
+                                    <div class="large-wrap">
+                                        <div class="large">
+                                            <img src="/images/dream-large.jpg" alt="">
+                                            <div class="text">
+                                                Cultural
+                                            </div>
+                                        </div>
+                                    </div>                          
+                        
+                                </a>
+                            </div>                      
+                            <div class="four columns">
+                                <a class="dream" href="#">
+                                    <div class="large-wrap">
+                                        <div class="large">
+                                            <img src="/images/dream-large.jpg" alt="">
+                                            <div class="text">
+                                                Adventurous
+                                            </div>
+                                        </div>
+                                    </div>      
+                        
+                                </a>
+                            </div>
+
+                            <div class="four columns">
+                                <a class="dream" href="#">
+                                    <div class="large-wrap">
+                                        <div class="large">
+                                            <img src="/images/dream-large.jpg" alt="">
+                                            <div class="text">
+                                                Tropical
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+
+                        </div><!-- a row of .dreams -->
+
+                    </div>
+
+
+                    <p class="lead tc">What type of activities do you like?</p>
+
+
+
+                <div class="dreams dream-type simple">
+
+                    <div class="row">
+                        <div class="twelve column">
+                            <ul class="block-grid five-up mobile-two-up">
+        
+                                <li class="item">
+                                    <a class="dream" href="#">
+                                        <div class="large-wrap">
+                                            <div class="large">
+                                                <img src="/images/dream-large.jpg" alt="">
+                                                <div class="text">
+                                                    Snorkelling
+                                                </div>
+                                            </div>
+                                        </div>                          
+                            
+                                    </a>
+                                </li>                       
+                                <li class="item">
+                                    <a class="dream" href="#">
+                                        <div class="large-wrap">
+                                            <div class="large">
+                                                <img src="/images/dream-large.jpg" alt="">
+                                                <div class="text">
+                                                    Swim with Dolphins
+                                                </div>
+                                            </div>
+                                        </div>      
+                            
+                                    </a>
+                                </li>
+
+                                <li class="item">
+                                    <a class="dream" href="#">
+                                        <div class="large-wrap">
+                                            <div class="large">
+                                                <img src="/images/dream-large.jpg" alt="">
+                                                <div class="text">
+                                                    Surfing
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="item">
+                                    <a class="dream" href="#">
+                                        <div class="large-wrap">
+                                            <div class="large">
+                                                <img src="/images/dream-large.jpg" alt="">
+                                                <div class="text">
+                                                    Eating
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="item">
+                                    <a class="dream" href="#">
+                                        <div class="large-wrap">
+                                            <div class="large">
+                                                <img src="/images/dream-large.jpg" alt="">
+                                                <div class="text">
+                                                    Sight-seeing
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                        
+
+
+                        </div><!-- a row of .dreams -->
+
+                    </div>
+
+
+
+
+                     <div class="tc">
+                          <select id="tripTypeDropdown" style="margin:0 auto;" tabindex="1" class="pretty dk">
+                            <option SELECTED>Anniversary</option>
+                            <option>Birthday</option>
+                            <option>Gap Year</option>
+                          </select>
+                     </div>
+
+
+
+            </form>
+
+    </div>
+</div>
 {% endblock %}
