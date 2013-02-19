@@ -20,11 +20,13 @@
                     <a href="http://pinterest.com/dreamfunder" target="_blank"><i class="icon-pinterest icon-large"></i> Pinterest</a>
                 </div>
 
-                <div class="hero">
+        <div class="hero">
 
-                    <div class="wrap">
-                        <div class="content">
-                            <img class="bg" src="/images/hero2-bg.jpg" alt=""/>
+            <div class="wrap">
+                <div class="content">
+                    <img class="bg" src="/images/hero2-bg.jpg" alt=""/>
+                    <div class="row">
+                        <div class="twelve columns no-padding">
                             <div class="hero-sub-content">
                                 <h1 class="logo">DreamFunder</h1>
                                 <h2 class="hero-title">A Dream Birthday Trip</h2>
@@ -54,14 +56,18 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="wrap">
-                        <div class="content">
-                            <img class="bg" src="/images/hero1-bg.jpg" alt=""/>
+            <div class="wrap">
+                <div class="content">
+                    <img class="bg" src="/images/hero1-bg.jpg" alt=""/>
+                    <div class="row">
+                        <div class="twelve columns no-padding">
                             <div class="hero-sub-content">
                                 <h1 class="logo">DreamFunder</h1>
-                                <h2 class="hero-title">Your Dream Birthday Trip</h2>
-                                <h3 class="hero-subtitle">Funded by Your Friends & Family!</h3>
+                                <h2 class="hero-title">A Dream Birthday Trip</h2>
+                                <h3 class="hero-subtitle">Funded by Friends & Family!</h3>
 
                                 <a href="" class="button primary" data-reveal-id="signupModal-1">Sign Up!</a>
                             </div>
@@ -72,21 +78,55 @@
                                     </div>
                                     <h2 class="title">Bora Bora Getaway!</h2>
                                     <div class="quote">
-                                        <p>"My friends and family helped me have an amazing vacation in Bora Bora for my sweet sixteen!" - Sally Hampton</p>
-                                        <p>"Huge thank you to my friends and family!"</p>
+                                        <p>"My friends and family helped me have an amazing vacation in Bora Bora for my sweet sixteen!"</p>
+                                        <p>"Huge thank you to my friends and family!"  - Sally Hampton</p>
                                     </div>  
                                     <div class="helping-users">
-                                        
+                                        <img src="/images/user-profile.jpg" alt="Name">
+                                        <img src="/images/user-profile.jpg" alt="Name">
+                                        <img src="/images/user-profile.jpg" alt="Name">
+                                        <img src="/images/user-profile.jpg" alt="Name">
+                                        <img src="/images/user-profile.jpg" alt="Name">
+                                        <img src="/images/user-profile.jpg" alt="Name">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
+
+
+            <!-- <div class="wrap">
+                <div class="content">
+                    <img class="bg" src="/images/hero1-bg.jpg" alt=""/>
+                    <div class="hero-sub-content">
+                        <h1 class="logo">DreamFunder</h1>
+                        <h2 class="hero-title">Your Dream Birthday Trip</h2>
+                        <h3 class="hero-subtitle">Funded by Your Friends & Family!</h3>
+
+                        <a href="" class="button primary" data-reveal-id="signupModal-1">Sign Up!</a>
+                    </div>
+                    <div class="hero-testimonial">
+                        <div class="content">
+                            <div class="image rounded">
+                                <img src="/images/user-profile.jpg" alt="Sally Hampton">
+                            </div>
+                            <h2 class="title">Bora Bora Getaway!</h2>
+                            <div class="quote">
+                                <p>"My friends and family helped me have an amazing vacation in Bora Bora for my sweet sixteen!" - Sally Hampton</p>
+                                <p>"Huge thank you to my friends and family!"</p>
+                            </div>  
+                            <div class="helping-users">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
         </div>
+
 
 <!--        <div class="row process">
             <div class="four columns">
@@ -240,14 +280,20 @@
                                 <h3 class="dreamer-title">Samantha</h3>
                                 <h4 class="dreamer-subtitle"><i class="icon-map-marker"></i> Menlo Park, CA</h4>    
 
+                            <div class="dream-time">
+                                    <input class="dream-time-progress" data-thickness=".1" data-height="42" data-width="42" data-displayinput="false" value="75">
+                                    <span class="dream-time-days">30</span>
+                                    <span class="dream-time-days-text">days<br/>left</span>
+                                </div>
+
                                 <h5 class="dream-total">$3,500</h5>
+
+
 
                                 <div class="dream-total-percentage">
                                     <div class="percentage-complete" style="width:70%">70%</div>
                                 </div>
-                                <div class="dream-time">
-                                    <span class="emphasis-bright">30</span> days left
-                                </div>
+    
                                 
                                 <div class="button primary simple medium emphasis-bright fund-button">Fund My Trip!</div>
                             </div>
@@ -376,11 +422,11 @@
 
 
 
-                <div class="dreams dream-type simple">
+                <div class="dreams dream-type simple" data-selection=".dream" data-selection-name="traveller-type">
 
-                        <div class="row">
+                    <div class="row">
                             <div class="four columns">
-                                <a class="dream selected" href="#">
+                                <a class="dream" data-selection-value="cultural" data-selected>
                                     <div class="large-wrap">
                                         <div class="large">
                                             <img src="/images/dream-large.jpg" alt="">
@@ -393,7 +439,7 @@
                                 </a>
                             </div>                      
                             <div class="four columns">
-                                <a class="dream" href="#">
+                                <a class="dream" data-selection-value="adventurous">
                                     <div class="large-wrap">
                                         <div class="large">
                                             <img src="/images/dream-large.jpg" alt="">
@@ -407,7 +453,7 @@
                             </div>
 
                             <div class="four columns">
-                                <a class="dream" href="#">
+                                <a class="dream" data-selection-value="tropical">
                                     <div class="large-wrap">
                                         <div class="large">
                                             <img src="/images/dream-large.jpg" alt="">
@@ -418,11 +464,13 @@
                                     </div>
                                 </a>
                             </div>
+
+
                         </div><!-- a row of .dreams -->
 
                         <div class="row">
                             <div class="four columns">
-                                <a class="dream" href="#">
+                                <a class="dream" data-selection-value="cultural">
                                     <div class="large-wrap">
                                         <div class="large">
                                             <img src="/images/dream-large.jpg" alt="">
@@ -435,7 +483,7 @@
                                 </a>
                             </div>                      
                             <div class="four columns">
-                                <a class="dream" href="#">
+                                <a class="dream" data-selection-value="adventurous">
                                     <div class="large-wrap">
                                         <div class="large">
                                             <img src="/images/dream-large.jpg" alt="">
@@ -449,7 +497,7 @@
                             </div>
 
                             <div class="four columns">
-                                <a class="dream" href="#">
+                                <a class="dream" data-selection-value="tropical">
                                     <div class="large-wrap">
                                         <div class="large">
                                             <img src="/images/dream-large.jpg" alt="">
@@ -467,18 +515,16 @@
                     </div>
 
 
-                    <p class="lead tc">What type of activities do you like?</p>
+                <p class="lead tc">What type of activities do you like?</p>
 
-
-
-                <div class="dreams dream-type simple">
+                <div class="dreams activity-type simple" data-selection=".dream" data-multiple-selection>
 
                     <div class="row">
                         <div class="twelve column">
                             <ul class="block-grid five-up mobile-two-up">
         
                                 <li class="item">
-                                    <a class="dream" href="#">
+                                    <a class="dream">
                                         <div class="large-wrap">
                                             <div class="large">
                                                 <img src="/images/dream-large.jpg" alt="">
@@ -491,7 +537,7 @@
                                     </a>
                                 </li>                       
                                 <li class="item">
-                                    <a class="dream" href="#">
+                                    <a class="dream">
                                         <div class="large-wrap">
                                             <div class="large">
                                                 <img src="/images/dream-large.jpg" alt="">
@@ -505,7 +551,7 @@
                                 </li>
 
                                 <li class="item">
-                                    <a class="dream" href="#">
+                                    <a class="dream selected">
                                         <div class="large-wrap">
                                             <div class="large">
                                                 <img src="/images/dream-large.jpg" alt="">
@@ -518,7 +564,7 @@
                                 </li>
 
                                 <li class="item">
-                                    <a class="dream" href="#">
+                                    <a class="dream">
                                         <div class="large-wrap">
                                             <div class="large">
                                                 <img src="/images/dream-large.jpg" alt="">
@@ -531,7 +577,7 @@
                                 </li>
 
                                 <li class="item">
-                                    <a class="dream" href="#">
+                                    <a class="dream">
                                         <div class="large-wrap">
                                             <div class="large">
                                                 <img src="/images/dream-large.jpg" alt="">
@@ -551,20 +597,11 @@
 
                         </div><!-- a row of .dreams -->
 
+                        <p class="tc">
+                            <a href="" class="button primary">Next</a>
+                        </p>
+
                     </div>
-
-
-
-
-                     <div class="tc">
-                          <select id="tripTypeDropdown" style="margin:0 auto;" tabindex="1" class="pretty dk">
-                            <option SELECTED>Anniversary</option>
-                            <option>Birthday</option>
-                            <option>Gap Year</option>
-                          </select>
-                     </div>
-
-
 
             </form>
 

@@ -1,0 +1,139 @@
+#profile {
+
+	.dream-profile {
+	border:0;
+	}
+
+	.dream-pretitle {
+	font-size:34px;
+
+		&::before {
+		font-size:120px;
+		margin-bottom:-12px
+		}
+	}
+
+	.dream-title {
+	font-size:62px;
+
+		&::after {
+		font-size:72px;
+		margin-top:-34px;
+		}
+	}
+
+	.dreamer-title {
+	font-size:35px;
+	}
+
+	.dream-total {
+	font-size:33px;
+	}
+
+	.dream-total-percentage {
+	width:50%;
+	}
+
+	.dream-time {
+	position:absolute;
+	left:52%;
+	margin-top:-15px;
+
+		>div:first-child canvas{ 
+		//@include box-shadow(0 0 4px 2px rgba(255,255,255,.2));
+		border:2px solid $dark;
+		}
+	}
+
+	.dream-time-days {
+	font-size: 20px;
+	margin-top: 15px;
+	width:80px;
+	}
+
+	.dream-time-days-text {
+	font-size: 11px !important;
+	margin-top: 24px;
+	width:80px;
+	}
+}
+
+
+article .heading {
+font-family:$standardFontFamily;
+text-transform:uppercase;
+letter-spacing:-1px;
+margin-top:50px;
+margin-bottom:30px;
+
+	.emphasis-weight {
+	font-weight:300;
+	font-style:normal;
+	}
+
+	&.accented {
+	background:url(/images/brush-bg.png) no-repeat 0 0;
+	}
+}
+
+.adventure {
+position:relative;
+
+	.text {
+	font-size:16px;
+	}
+
+	.cost {
+	color:#777;
+	font-style:italic;
+	display:block;
+	background:url(/images/cost-arrow.png) no-repeat 0 0;
+	height:55px;
+	padding-left:25px;
+	padding-top:25px;
+	font-size:25px;
+	font-family:Georgia, "Helvetica", Helvetica, Arial, sans-serif;
+	color:$linkColor;
+	}
+
+	.button.primary {
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	}
+}
+
+
+.funder {
+border-bottom:1px dotted #eee;
+margin-top:15px;
+padding-bottom:15px;
+margin-bottom:20px !important;
+
+	img {
+		width:100%;
+	}
+}
+
+.funder-details {
+padding-top:5%;
+padding-bottom:15px;
+}
+
+
+.funder-full-name {
+color:$linkColor;
+font-size:14px;
+}
+
+.funder-familiar-name {
+color:#666;
+font-size:14px;
+}
+
+.funder-gave {
+font-size:14px;
+text-transform:uppercase;
+color:#777;
+display:block;
+}

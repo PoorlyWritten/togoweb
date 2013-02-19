@@ -1,4 +1,4 @@
-;(function ($, window, undefined) {
+﻿;(function ($, window, undefined) {
   'use strict';
 
   var $doc = $(document),
@@ -71,24 +71,20 @@
         var $container = $(this),
             $items = $container.find($container.attr("data-selection")),
             $name = $container.find($container.attr("data-selection-name")),
-            multipleSelection = $container.attr("data-multiple-selection"),
             itemTotal = $items.length - 1;
-
-            console.log(multipleSelection);
 
           $items
           .on('click',function(){
 
             var $this = $(this),
-                selected = $this.attr('data-selected');
+                attr = $this.attr('data-selected');
 
-            if (typeof multipleSelection !== 'undefined' && multipleSelection !== false) {
-              
-            } else {
+            if (!$this.attr('data-multiple-selection')) {
               $items.removeAttr('data-selected');
+
             }
 
-            if (typeof selected !== 'undefined' && selected !== false) {
+            if (typeof attr !== 'undefined' && attr !== false) {
                 $this.removeAttr('data-selected');
             } else {
               $this.attr('data-selected','');
@@ -96,8 +92,6 @@
 
           });
       });
-
-});
 
 
   // UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE8 SUPPORT AND ARE USING .block-grids
