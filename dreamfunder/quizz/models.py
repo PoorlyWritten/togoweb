@@ -13,11 +13,18 @@ def upload_file_path(instance=None, filename=None):
 class Quizz(models.Model):
     name = models.CharField(max_length=256)
 
+    def __unicode__(self):
+        return self.name
+
+
 class Question(models.Model):
     quizz = models.ForeignKey(Quizz)
     name = models.CharField(max_length=256)
     question = models.CharField(max_length=1024)
     order = models.IntegerField()
+
+    def __unicode__(self):
+        return self.name
 
 class AnswerChoice(models.Model):
     question = models.ForeignKey(Question)
@@ -25,6 +32,9 @@ class AnswerChoice(models.Model):
     text = models.CharField(max_length=256)
     comment = models.CharField(max_length=1024)
     date_uploaded = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.text
 
 class QuizzProfile(models.Model):
     user = models.ForeignKey(User)
