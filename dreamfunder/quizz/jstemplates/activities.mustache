@@ -1,0 +1,47 @@
+  <div class="wrap">
+      <h2 class="modal-title">Your Dream Trip</h2>
+      <p class="modal-process-status">
+        Step 3 of 3
+      </p>
+
+                <p class="lead tc">{{question}}</p>
+
+                <div class="dreams activity-type simple" data-selection=".dream" data-multiple-selection>
+
+                    <div class="row">
+                        <div class="twelve column">
+                            <ul class="block-grid three-up mobile-one-up">
+        
+{{#answers}}
+                                <li class="item">
+                                    <a class="dream" data-selection-value={{text}} data-selection-letter={{image_letter}}>
+                                        <div class="large-wrap">
+                                            <div class="large">
+                                                <img src="{{image}}" alt="">
+                                                <div class="text">
+                                                    {{text}}
+                                                </div>
+                                            </div>
+                                        </div>                          
+                            
+                                    </a>
+                                </li>                       
+{{/answers}}
+
+                            </ul>
+                        </div>
+                    </div>
+
+                        
+
+
+                        </div><!-- a row of .dreams -->
+
+                        <p class="tc">
+                            <div id="shareButton" class="button primary">Next</div>
+                        </p>
+
+                    </div>
+
+
+    </div>

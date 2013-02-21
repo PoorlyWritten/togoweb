@@ -1,5 +1,7 @@
+{% load jstemplate %}
 <!DOCTYPE html>
 
+<!-- Copyright Alex Lovell-Troy 2013 -->
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
@@ -37,16 +39,33 @@
 
 </head>
 <body {% block body-id %}{% endblock %}>
+{% block fbinit %}
 <div id="fb-root"></div>
 <script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=205672082911342";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '205672082911342', // App ID from the App Dashboard
+      channelUrl : '//dreamfunder.co/fb_channel.html', // Channel File for x-domain communication
+      status     : true, // check the login status upon init?
+      cookie     : true, // set sessions cookies to allow your server to access the session?
+      xfbml      : true  // parse XFBML tags on this page?
+    });
+
+    // Additional initialization code such as adding Event Listeners goes here
+
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
 </script>
+{% endblock %}
 
 {% block content %}
 <div class="row">
@@ -85,13 +104,14 @@
         <div class="row">
             <div class="eight columns centered tc">
                 
-                <a href="" class="button primary" data-reveal-id="signupModal-1">Sign Up!</a>
+                <a href="" class="button primary" data-reveal-id="signupModal">Sign Up!</a>
 
                 <p>Like Us! Share the love!</p>
                 <p>
-                    <a href="http://twitter.com/dreamfunder" target="_blank"><i class="icon-twitter-sign icon-large"></i> Twitter</a>
+                    <a href="http://twitter.com/thedreamfunder" target="_blank"><i class="icon-twitter-sign icon-large"></i> Twitter</a>
                     <a href="http://facebook.com/dreamfunder" target="_blank"><i class="icon-facebook-sign icon-large"></i> Facebook</a>
                     <a href="http://pinterest.com/dreamfunder" target="_blank"><i class="icon-pinterest icon-large"></i> Pinterest</a>
+                    <a href="mailto:contact@dreamfunder.co" ><i class="icon-envelope-alt icon-large"></i> Contact Us</a>
                 </p>
 
             </div>
@@ -101,7 +121,6 @@
             <div class="row">
                 <div class="twelve columns">
                     <p>
-                        © 2013 Kuoni.com
                     </p>
                 </div>
             </div>      
@@ -147,11 +166,17 @@
     <script src="/javascripts/foundation/jquery.foundation.topbar.js"></script>
     
     <script src="/javascripts/foundation/jquery.placeholder.js"></script>
+
+    <script src="https://raw.github.com/janl/mustache.js/master/mustache.js"></script>
+
+    <script src="https://raw.github.com/mjumbewu/django-jstemplate/master/jstemplate/static/libs/django.mustache.js"></script>
     
 
   <!-- Application Javascript, safe to override -->
+  <script src="/javascripts//jquery.knob.js"></script>
   <script src="/javascripts/foundation/app.js"></script>
 {% block modals %}
 {% endblock %}
+{% mustachejs "activities" %}
 </body>
 </html>

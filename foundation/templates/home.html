@@ -7,138 +7,18 @@
             <div class="twelve columns no-padding">
 
                 <div class="social-links">
-                    {% if not user.is_authenticated %}
-                    <a href="{% url socialauth_begin 'facebook' %}?{{ redirect_querystring }}">Facebook Connect</a>
-                    {% else %}
-                    <a href="/logout/">Logout</a>
                     {% if user.is_staff %}
+                    <a href="/logout/">Logout</a>
                     <a href="/admin/">Admin</a>
                     {% endif %}
-                    {% endif %}
-                    <a href="http://twitter.com/dreamfunder" target="_blank"><i class="icon-twitter-sign icon-large"></i> Twitter</a>
+                    <a href="http://twitter.com/thedreamfunder" target="_blank"><i class="icon-twitter-sign icon-large"></i> Twitter</a>
                     <a href="http://facebook.com/dreamfunder" target="_blank"><i class="icon-facebook-sign icon-large"></i> Facebook</a>
                     <a href="http://pinterest.com/dreamfunder" target="_blank"><i class="icon-pinterest icon-large"></i> Pinterest</a>
                 </div>
-
-        <div class="hero">
-
-            <div class="wrap">
-                <div class="content">
-                    <img class="bg" src="/images/hero2-bg.jpg" alt=""/>
-                    <div class="row">
-                        <div class="twelve columns no-padding">
-                            <div class="hero-sub-content">
-                                <h1 class="logo">DreamFunder</h1>
-                                <h2 class="hero-title">A Dream Birthday Trip</h2>
-                                <h3 class="hero-subtitle">Funded by Friends & Family!</h3>
-
-                                <a href="" class="button primary" data-reveal-id="signupModal-1">Sign Up!</a>
-                            </div>
-                            <div class="hero-testimonial">
-                                <div class="content">
-                                    <div class="image rounded">
-                                        <img src="/images/user-profile.jpg" alt="Sally Hampton">
-                                    </div>
-                                    <h2 class="title">Bora Bora Getaway!</h2>
-                                    <div class="quote">
-                                        <p>"My friends and family helped me have an amazing vacation in Bora Bora for my sweet sixteen!"</p>
-                                        <p>"Huge thank you to my friends and family!"  - Sally Hampton</p>
-                                    </div>  
-                                    <div class="helping-users">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            <div class="wrap">
-                <div class="content">
-                    <img class="bg" src="/images/hero1-bg.jpg" alt=""/>
-                    <div class="row">
-                        <div class="twelve columns no-padding">
-                            <div class="hero-sub-content">
-                                <h1 class="logo">DreamFunder</h1>
-                                <h2 class="hero-title">A Dream Birthday Trip</h2>
-                                <h3 class="hero-subtitle">Funded by Friends & Family!</h3>
-
-                                <a href="" class="button primary" data-reveal-id="signupModal-1">Sign Up!</a>
-                            </div>
-                            <div class="hero-testimonial">
-                                <div class="content">
-                                    <div class="image rounded">
-                                        <img src="/images/user-profile.jpg" alt="Sally Hampton">
-                                    </div>
-                                    <h2 class="title">Bora Bora Getaway!</h2>
-                                    <div class="quote">
-                                        <p>"My friends and family helped me have an amazing vacation in Bora Bora for my sweet sixteen!"</p>
-                                        <p>"Huge thank you to my friends and family!"  - Sally Hampton</p>
-                                    </div>  
-                                    <div class="helping-users">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                        <img src="/images/user-profile.jpg" alt="Name">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- <div class="wrap">
-                <div class="content">
-                    <img class="bg" src="/images/hero1-bg.jpg" alt=""/>
-                    <div class="hero-sub-content">
-                        <h1 class="logo">DreamFunder</h1>
-                        <h2 class="hero-title">Your Dream Birthday Trip</h2>
-                        <h3 class="hero-subtitle">Funded by Your Friends & Family!</h3>
-
-                        <a href="" class="button primary" data-reveal-id="signupModal-1">Sign Up!</a>
-                    </div>
-                    <div class="hero-testimonial">
-                        <div class="content">
-                            <div class="image rounded">
-                                <img src="/images/user-profile.jpg" alt="Sally Hampton">
-                            </div>
-                            <h2 class="title">Bora Bora Getaway!</h2>
-                            <div class="quote">
-                                <p>"My friends and family helped me have an amazing vacation in Bora Bora for my sweet sixteen!" - Sally Hampton</p>
-                                <p>"Huge thank you to my friends and family!"</p>
-                            </div>  
-                            <div class="helping-users">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
         </div>
 
-
-<!--        <div class="row process">
-            <div class="four columns">
-                <img src="/images/process-1.png" alt="Create your Dream Trip">
-            </div>
-            <div class="four columns">
-                <img src="/images/process-2.png" alt="Create your Profile">
-            </div>
-            <div class="four columns">
-                <img src="/images/process-3.png" alt="Invite Your Friends & Family">
-            </div>
-        </div> -->
+{% include 'heros.html' %}
 
     </header>
 
@@ -157,25 +37,14 @@
                             <div class="three columns">
                                 <a class="dream" href="#">
                                     <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Cultural Explorations!
-                                            </div>
-                                        </div>
+<div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/D%20Tropics.png" alt="Islands & Beaches"><div class="text">Islands & Beaches</div></div>
                                     </div>                          
-                        
                                 </a>
                             </div>                      
                             <div class="three columns">
                                 <a class="dream" href="#">
                                     <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Cultural Explorations!
-                                            </div>
-                                        </div>
+<div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/E-Okavango-Mokoros-iStock_000002690619Small.png" alt="Immerse Yourself in New Cultures"><div class="text">Immerse Yourself in New Cultures</div></div>
                                     </div>      
                         
                                 </a>
@@ -184,12 +53,7 @@
                             <div class="three columns">
                                 <a class="dream" href="#">
                                     <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Cultural Explorations!
-                                            </div>
-                                        </div>
+<div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/great_cities.png" alt="Great Cities"><div class="text">Great Cities</div></div>
                                     </div>
                                 </a>
                             </div>
@@ -197,12 +61,7 @@
                             <div class="three columns">
                                 <a class="dream" href="#">
                                     <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Cultural Explorations!
-                                            </div>
-                                        </div>
+<div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/Mountains%20200320.png" alt="Adventure and Explore"><div class="text">Adventure and Explore</div></div>
                                     </div>
                                 </a>
                             </div>
@@ -214,25 +73,14 @@
                             <div class="three columns">
                                 <a class="dream" href="#">
                                     <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Cultural Explorations!
-                                            </div>
-                                        </div>
+<div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/Teaching%20re.png" alt="Do good"><div class="text">Do good</div></div>
                                     </div>                          
-                        
                                 </a>
                             </div>                      
                             <div class="three columns">
                                 <a class="dream" href="#">
                                     <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Cultural Explorations!
-                                            </div>
-                                        </div>
+<div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/A-Taj-Mahal-BOM_00700_Taj_Mahalxxxx_002.png" alt="Cultural Treasures"><div class="text">Cultural Treasures</div></div>
                                     </div>      
                         
                                 </a>
@@ -241,12 +89,7 @@
                             <div class="three columns end">
                                 <a class="dream" href="#">
                                     <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Cultural Explorations!
-                                            </div>
-                                        </div>
+<div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/Couple%20320%20300.jpg" alt="Just for two"><div class="text">Just for two</div></div>
                                     </div>
                                 </a>
                             </div>
@@ -329,10 +172,18 @@
 
     </section>
 
+<script>
+Questions = {% autoescape off %}{{ questions_json }}{% endautoescape %}
+</script>
+
+<form id=reporting style="display:none" method=post action="/report">
+    {% csrf_token %}
+    <input type=hidden name=report value="">
+</form>
 {% endblock %}
 
 {% block modals %}
-<div id="signupModal-1" class="reveal-modal fixed expand expand-limit">
+<div id="signupModal" class="reveal-modal fixed expand expand-limit">
   <div class="wrap">
       <h2 class="modal-title">Sign Up!</h2>
       <p class="modal-process-status">
@@ -340,76 +191,18 @@
       </p>
 
       <p class="lead tc">Connect with Facebook</p>
-      <p class="tc"><a href="" data-reveal-id="signupModal-2"><img src="/images/facebook-button.png" alt=""/></a></p>
+      <p class="tc">
+      <a href="{% url socialauth_begin 'facebook' %}?{{ redirect_querystring }}"><img src="/images/facebook-button.png" alt=""/></a>
+      </p>
       <!-- <a class="close-reveal-modal">&#215;</a> -->
 
-      <p class="tc">or signup with your <a href="" data-reveal-id="signupModal-manual">email address</a></p>
     </div>
 </div>
 
-<div id="signupModal-2" class="reveal-modal fixed expand expand-limit">
-  <div class="wrap">
-      <h2 class="modal-title">Your Dream Trip</h2>
-      <p class="modal-process-status">
-        Step 2 of 3
-      </p>
+{% include 'triptypemodal.html' %}
+{% include 'supportermodals.html' %}
 
-      <p class="lead tc">What special occasion would you like to use DreamFunder for?</p>
-
-
-        
-
-            <form class="">
-                <div class="row">
-                <div class="four columns centered">
-<!--            
-                          
-                      <select style="display:none;" id="customDropdown">
-                        <option SELECTED>Anniversary</option>
-                        <option>Birthday</option>
-                        <option>Gap Year</option>
-                      </select>
-                      <div class="custom dropdown">
-                        <a href="#" class="current">
-                          Anniversary
-                        </a>
-                        <a href="#" class="selector"></a>
-                        <ul>
-                          <li class="icon-heart"><i class=""></i> Anniversary</li>
-                          <li><i class="icon-gift"></i> Birthday</li>
-                          <li><i class="icon-globe"></i> Gap Year</li>
-                        </ul>
-                      </div>
-
-                     -->
-
-                     <div class="tc">
-                          <select id="tripTypeDropdown" style="margin:0 auto;" tabindex="1" class="pretty dk">
-                            <option SELECTED>Anniversary</option>
-                            <option>Birthday</option>
-                            <option>Gap Year</option>
-                          </select>
-                     </div>
-
-<!--                        <div class="row">
-                            <div class="three columns">
-                                <label for="tripTypeDropdown">Trip Type:</label>
-                            </div>
-                            <div class="five columns">
-
-                            </div>
-                        </div> -->
-
-
-                </div>
-                  </div>
-            </form>
-
-    </div>
-</div>
-
-
-<div id="signupModal-3" class="reveal-modal expand expand-limit">
+<div id="travelerType" class="reveal-modal expand expand-limit">
   <div class="wrap">
       <h2 class="modal-title">Your Dream Trip</h2>
       <p class="modal-process-status">
@@ -418,193 +211,18 @@
 
       <p class="lead tc">What type of traveller are you?</p>
 
-            <form class="">
-
-
-
                 <div class="dreams dream-type simple" data-selection=".dream" data-selection-name="traveller-type">
 
-                    <div class="row">
-                            <div class="four columns">
-                                <a class="dream" data-selection-value="cultural" data-selected>
-                                    <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Cultural
-                                            </div>
-                                        </div>
-                                    </div>                          
-                        
-                                </a>
-                            </div>                      
-                            <div class="four columns">
-                                <a class="dream" data-selection-value="adventurous">
-                                    <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Adventurous
-                                            </div>
-                                        </div>
-                                    </div>      
-                        
-                                </a>
-                            </div>
-
-                            <div class="four columns">
-                                <a class="dream" data-selection-value="tropical">
-                                    <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Tropical
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-
-                        </div><!-- a row of .dreams -->
-
-                        <div class="row">
-                            <div class="four columns">
-                                <a class="dream" data-selection-value="cultural">
-                                    <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Cultural
-                                            </div>
-                                        </div>
-                                    </div>                          
-                        
-                                </a>
-                            </div>                      
-                            <div class="four columns">
-                                <a class="dream" data-selection-value="adventurous">
-                                    <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Adventurous
-                                            </div>
-                                        </div>
-                                    </div>      
-                        
-                                </a>
-                            </div>
-
-                            <div class="four columns">
-                                <a class="dream" data-selection-value="tropical">
-                                    <div class="large-wrap">
-                                        <div class="large">
-                                            <img src="/images/dream-large.jpg" alt="">
-                                            <div class="text">
-                                                Tropical
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-
-                        </div><!-- a row of .dreams -->
+                    {% include 'travelertypes.html' %}
 
                     </div>
-
-
-                <p class="lead tc">What type of activities do you like?</p>
-
-                <div class="dreams activity-type simple" data-selection=".dream" data-multiple-selection>
-
-                    <div class="row">
-                        <div class="twelve column">
-                            <ul class="block-grid five-up mobile-two-up">
-        
-                                <li class="item">
-                                    <a class="dream">
-                                        <div class="large-wrap">
-                                            <div class="large">
-                                                <img src="/images/dream-large.jpg" alt="">
-                                                <div class="text">
-                                                    Snorkelling
-                                                </div>
-                                            </div>
-                                        </div>                          
-                            
-                                    </a>
-                                </li>                       
-                                <li class="item">
-                                    <a class="dream">
-                                        <div class="large-wrap">
-                                            <div class="large">
-                                                <img src="/images/dream-large.jpg" alt="">
-                                                <div class="text">
-                                                    Swim with Dolphins
-                                                </div>
-                                            </div>
-                                        </div>      
-                            
-                                    </a>
-                                </li>
-
-                                <li class="item">
-                                    <a class="dream selected">
-                                        <div class="large-wrap">
-                                            <div class="large">
-                                                <img src="/images/dream-large.jpg" alt="">
-                                                <div class="text">
-                                                    Surfing
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="item">
-                                    <a class="dream">
-                                        <div class="large-wrap">
-                                            <div class="large">
-                                                <img src="/images/dream-large.jpg" alt="">
-                                                <div class="text">
-                                                    Eating
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li class="item">
-                                    <a class="dream">
-                                        <div class="large-wrap">
-                                            <div class="large">
-                                                <img src="/images/dream-large.jpg" alt="">
-                                                <div class="text">
-                                                    Sight-seeing
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                        
-
-
-                        </div><!-- a row of .dreams -->
-
                         <p class="tc">
-                            <a href="" class="button primary">Next</a>
+                            <div  class="button primary" id="activateActivities">Next</div>
                         </p>
-
                     </div>
-
-            </form>
-
     </div>
+</div>
+
+<div id="travelerActivities" class="reveal-modal expand expand-limit">
 </div>
 {% endblock %}

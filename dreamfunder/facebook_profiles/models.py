@@ -24,7 +24,10 @@ class FacebookProfile(models.Model):
             'friends',
             'interests'])
         self.friends = detail['friends']['data']
-        self.interests = detail['interests']['data']
+        try:
+            self.interests = detail['interests']['data']
+        except KeyError:
+            self.interests = ''
         self.save()
         print detail.keys()
 

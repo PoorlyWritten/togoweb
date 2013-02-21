@@ -1,0 +1,111 @@
+<form id=supporterForm class="custom" method=POST action ='/supporter'>
+{% csrf_token %}
+<div id="supporterRelationship" class="reveal-modal medium">
+  <div class="wrap">
+      <h2 class="modal-title">Their Dream Trip</h2>
+      <p class="modal-process-status"> Step 1 of 3 </p>
+      <p class="lead tc">Who would you like to plan a trip for?</p>
+            <div class="row">
+                <div class="four columns centered">
+                    <div class=row>
+                      <select name=quiz_relationship style="display:none;" id="customDropdown">
+                         <option value=CHILD>My Son</option>
+                         <option value=CHILD>My Daughter</option>
+                         <option value=PARENT>My Mother</option>
+                         <option value=PARENT>My Father</option>
+                         <option value=PARTNER>My Wife</option>
+                         <option value=PARTNER>My Husband</option>
+                         <option value=PARTNER>My Partner</option>
+                         <option value=FRIEND>My Friend</option>
+                         <option value=FAMILY>Other Family Member</option>
+                      </select>
+                      <div class="custom dropdown">
+                        <a href="#" class="current">My Partner</a>
+                        <a href="#" class="selector"></a>
+                        <ul>
+                         <option value=CHILD>My Son</option>
+                         <option value=CHILD>My Daughter</option>
+                         <option value=PARENT>My Mother</option>
+                         <option value=PARENT>My Father</option>
+                         <option value=PARTNER>My Wife</option>
+                         <option value=PARTNER>My Husband</option>
+                         <option value=PARTNER>My Partner</option>
+                         <option value=FRIEND>My Friend</option>
+                         <option value=FAMILY>Other Family Member</option>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class=row>
+                        <p class="tc">
+                            <a href="" class="button primary" data-reveal-id="supporterEvent">Next</a>
+                        </p>
+                </div>
+    </div>
+</div>
+<div id="supporterEvent" class="reveal-modal medium">
+  <div class="wrap">
+      <h2 class="modal-title">Their Dream Trip</h2>
+      <p class="modal-process-status"> Step 2 of 3 </p>
+      <p class="lead tc">What special occasion would you like to use DreamFunder for?</p>
+            <div class="row">
+                <div class="four columns centered">
+                    <div class=row>
+                      <select name=quiz_event style="display:none;" id="customDropdown">
+                        <option value=HONEYMOON>Honeymoon/Wedding</option>
+                        <option value=GRADUATION>Graduation</option>
+                        <option value=BIRTHDAY>Birthday</option>
+                        <option value=QUINCEANERA>Quinceanera / Debutante</option>
+                        <option value=ANNIVERSARY>Anniversary</option>
+                        <option value=GAPYEAR>Gap Year/Sabbatical</option>
+                        <option value=RETIREMENT>Retirement</option>
+                        <option value=OTHER>Other Special Occasion</option>
+                      </select>
+                      <div class="custom dropdown">
+                        <a href="#" class="current">Anniversary</a>
+                        <a href="#" class="selector"></a>
+                        <ul>
+                            <li><i class="icon-heart"></i> Honeymoon/Wedding</li>
+                            <li>Graduation</li>
+                            <li id="BirthdayOption"><i class="icon-gift"></i> Birthday</li>
+                            <li>Quinceañera / Debutante</li>
+                            <li>Anniversary</li>
+                            <li><i class="icon-globe"></i> Gap Year/Sabbatical</li>
+                            <li>Retirement</li>
+                            <li id="OtherOption">Other Special Occasion</li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class=row>
+                        <p class="tc">
+                            <a href="" class="button primary" data-reveal-id="supporterEmail">Next</a>
+                        </p>
+                </div>
+    </div>
+</div>
+<div id="supporterEmail" class="reveal-modal medium">
+  <div class="wrap">
+      <h2 class="modal-title">Their Dream Trip</h2>
+      <p class="modal-process-status"> Step 3 of 3 </p>
+      <p class="lead tc">What is <strong>your</strong> email address?</p>
+        <p class="tc">We'll let you know when you can get started on their trip.</p>
+            <div class="row">
+                <div class="four columns centered">
+                    <div class=row>
+                          <input name="email" type="text" placeholder="yourname@example.com" />
+                    </div>
+                </div>
+            </div>
+            <div class=row>
+                        <p class="tc">
+                            <input type=submit class="button primary" value="Next"</input>
+                        </p>
+                </div>
+    </div>
+</div>
+</form>
+<div id="supporterThanks" class="reveal-modal medium">
+</div>

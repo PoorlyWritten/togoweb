@@ -104,6 +104,8 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware',
+    'django.middleware.gzip.GZipMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -111,6 +113,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 ROOT_URLCONF = 'dreamfunder.urls'
@@ -143,6 +146,8 @@ INSTALLED_APPS = (
     'django_browserid',
     'social_auth',
     'facebook_profiles',
+    #'django_memcached',
+    'jstemplate',
     'south'
 )
 
@@ -153,6 +158,7 @@ AUTHENTICATION_BACKENDS = (
     # ...
 )
 
+from logging.handlers import SysLogHandler
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
@@ -160,29 +166,52 @@ AUTHENTICATION_BACKENDS = (
 # more details on how to customize your logging configuration.
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
         }
     },
     'handlers': {
+        'null': {
+            'level':'DEBUG',
+            'class':'django.utils.log.NullHandler',
+        },
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
-        }
+        },
+        'syslog':{
+            'level':'DEBUG',
+            'address': '/dev/log',
+            'class': 'logging.handlers.SysLogHandler',
+            'facility': SysLogHandler.LOG_USER,
+        },
     },
     'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
+           '': {
+            'handlers':['syslog'],
             'propagate': True,
+            'level':'DEBUG',
+        },
+        'django.db.backends': {
+            'handlers': ['null'],
+            'level': 'DEBUG',
+            'propagate': False,
         },
     }
 }
-LOGIN_REDIRECT_URL = "/home"
+LOGIN_REDIRECT_URL = "/home#dreamTrip"
 LOGIN_URL = "/"
+CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
+DJANGO_MEMCACHED_REQUIRE_STAFF = True
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
 
 # Find any .conf files under a settings dir in the same basedir as settings.py
 # and import them.  This is processed before local_settings so that it can

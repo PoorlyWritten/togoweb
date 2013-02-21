@@ -1,0 +1,68 @@
+<div id="dreamTrip" class="reveal-modal fixed expand expand-limit">
+  <div class="wrap">
+      <h2 class="modal-title">Your Dream Trip</h2>
+      <p class="modal-process-status"> Step 2 of 3 </p>
+      <p class="lead tc">What special occasion would you like to use DreamFunder for?</p>
+        <form id=tripType class="custom">
+            <div class="row">
+                <div class="four columns centered">
+                    <div class=row>
+                      <select style="display:none;" id="customDropdown">
+                        <option SELECTED>Honeymoon/Wedding</option>
+                        <option>Graduation</option>
+                        <option>Birthday</option>
+                        <option>Quinceanera / Debutante</option>
+                        <option>Anniversary</option>
+                        <option>Gap Year/Sabbatical</option>
+                        <option>Retirement</option>
+                        <option>Other Special Occasion</option>
+                      </select>
+                      <div class="custom dropdown">
+                        <a href="#" class="current">Anniversary</a>
+                        <a href="#" class="selector"></a>
+                        <ul>
+                            <li><i class="icon-heart"></i> Honeymoon/Wedding</li>
+                            <li>Graduation</li>
+                            <li id="BirthdayOption"><i class="icon-gift"></i> Birthday</li>
+                            <li>Quinceañera / Debutante</li>
+                            <li>Anniversary</li>
+                            <li><i class="icon-globe"></i> Gap Year/Sabbatical</li>
+                            <li>Retirement</li>
+                            <li id="OtherOption">Other Special Occasion</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class ="row">
+                          <label for="someoneElse"><input type="checkbox" id="someoneElse">This a trip for someone else.</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="eight columns centered">
+                 <div class="row" style="display:none;">
+                    <div class="two mobile-one columns">
+                      <label class="right inline">Which Birthday?</label>
+                    </div>
+                    <div class="ten mobile-three columns">
+                      <input type="text" placeholder="e.g. Eighteenth, 21st" class="eight" />
+                    </div>
+                  </div>
+                  <div id="OtherOccasionQuestion" class="row" style="display:none;">
+                    <div class="two mobile-one columns">
+                      <label class="right inline">Other Occasion:</label>
+                    </div>
+                    <div class="ten mobile-three columns">
+                      <input type="text" class="eight" />
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class=row>
+                        <p class="tc">
+                            <a href="" class="button primary" data-reveal-id="travelerType">Next</a>
+                        </p>
+                </div>
+            </div>
+        </form>
+  </div>
+</div>

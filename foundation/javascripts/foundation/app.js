@@ -1,3 +1,97 @@
+var triptypehash = {
+    "Islands and Beaches" : "IslandsBeaches",
+    "Immerse Yourself in New Cultures": "ImmersedInNewCultures",
+    "Great Cities": "GreatCities",
+    "Adventure and Explore": "ExploreAdventure",
+    "Do good": "DoGood",
+    "Cultural Treasures": "CulturalTreasures"
+}
+
+function resetSelection(){
+  // //Selection containers
+  var $selectionContainers = $("[data-selection]");
+      $selectionContainers
+      .each(function () {
+
+        var $container = $(this),
+            $items = $container.find($container.attr("data-selection")),
+            $name = $container.find($container.attr("data-selection-name")),
+            multipleSelection = $container.attr("data-multiple-selection"),
+            itemTotal = $items.length - 1;
+
+          $items
+          .on('click',function(){
+
+            var $this = $(this),
+                selected = $this.attr('data-selected');
+
+            if (typeof multipleSelection !== 'undefined' && multipleSelection !== false) {
+
+            } else {
+              $items.removeAttr('data-selected');
+            }
+
+            if (typeof selected !== 'undefined' && selected !== false) {
+                $this.removeAttr('data-selected');
+            } else {
+              $this.attr('data-selected','');
+            }
+
+          });
+      });
+}
+function renderModal(){
+    var name = $('a[data-selected]').data('selection-value')
+    console.log("Name = " + name );
+    template = Mustache.template('activities')
+    $('#travelerActivities').html(template.render(Questions[name]))
+    resetSelection();
+    $('#shareButton').on('click', function(event){ shareme() });
+    $("#travelerActivities").reveal()
+}
+
+function quizzSummary(){
+    var summary = {
+        event: $('form div.custom a.current').text(),
+        tripType: $('#travelerType a[data-selected]').data('selection-value'),
+        image_letters: []
+    }
+    $.each( $('#travelerActivities a[data-selected]'),
+           function(index, value) {
+               summary['image_letters'].push($(value).data('selection-letter'));
+           });
+    summary['image_url'] = "https://s3.amazonaws.com/assets.dreamfunder.co/share/" + triptypehash[summary['tripType']] + "/" + summary['image_letters'].sort().join('') + ".png"
+    return summary
+}
+
+function fb_share(event,image_url){
+    FB.ui(
+      {
+       method: 'feed',
+       name: 'Dreamfunder',
+       caption: 'Your ' + event + ' trip, gifted by your family and friends',
+//       description: (
+//           'Your ' + event + 'trip, gifted by your family and friends'
+//       ),
+       link: 'http://dreamfunder.co',
+       picture: image_url
+      },
+      function(response) {
+        if (response && response.post_id) {
+    $('form#reporting').submit();
+        } else {
+    $('form#reporting').submit();
+        }
+      }
+    );
+}
+
+function shareme() {
+    $('#travelerActivities').trigger('reveal:close')
+    summary = quizzSummary()
+    fb_share(summary['event'], summary['image_url'])
+    $("form#reporting input[name='report']").val(JSON.stringify(summary))
+}
 ;(function ($, window, undefined) {
   'use strict';
 
@@ -23,8 +117,8 @@
     //Orbit
     $(".hero").orbit({
        'animation' : 'fade'
-      ,'timer' : false
-      ,'advanceSpeed' : '5000'
+      ,'timer' : true
+      ,'advanceSpeed' : '4000'
       ,'bullets' : true
       ,'captions' : false
       ,'directionalNav' : true
@@ -32,8 +126,24 @@
     });
 
     //Temporarily show signup modal
-    $('#signupModal-3')
-    .reveal();
+    //$('#signupModal-3').reveal();
+
+    //Show the DreamTrip modal based on the anchor
+    if (window.location.hash == '#dreamTrip'){
+        $('#dreamTrip').reveal();
+         window.location.hash = ''
+    }
+    // Set the custom actions on the next button
+    $('#activateActivities').on('click', function(event){ renderModal() });
+
+    //Set the selections
+    resetSelection();
+
+    // Set the visibility on the extra questions
+//    if $('li#OtherOption').hasclass('selected'){
+//        $('div#OtherOccasionQuestion').display = 'block';
+//    }
+
 
 
     //Modal scroll position fix
@@ -63,39 +173,6 @@
     });
 
 
-  // //Selection containers
-  var $selectionContainers = $("[data-selection]");
-      $selectionContainers
-      .each(function () { 
-
-        var $container = $(this),
-            $items = $container.find($container.attr("data-selection")),
-            $name = $container.find($container.attr("data-selection-name")),
-            multipleSelection = $container.attr("data-multiple-selection"),
-            itemTotal = $items.length - 1;
-
-            console.log(multipleSelection);
-
-          $items
-          .on('click',function(){
-
-            var $this = $(this),
-                selected = $this.attr('data-selected');
-
-            if (typeof multipleSelection !== 'undefined' && multipleSelection !== false) {
-              
-            } else {
-              $items.removeAttr('data-selected');
-            }
-
-            if (typeof selected !== 'undefined' && selected !== false) {
-                $this.removeAttr('data-selected');
-            } else {
-              $this.attr('data-selected','');
-            }
-
-          });
-      });
 
 });
 
@@ -118,4 +195,8 @@
     });
   }
 
+
 })(jQuery, this);
+
+
+$('#activateActivities').on('click', function(event){ renderModal() });

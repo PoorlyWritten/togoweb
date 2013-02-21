@@ -1,6 +1,11 @@
 
 $heroHeight: 600px;
 
+.orbit-wrapper div.timer {
+    display: none;
+}
+
+
 .hero {
 min-height:$heroHeight;
 max-height:$heroHeight;
