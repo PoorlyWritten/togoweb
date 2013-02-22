@@ -7,6 +7,13 @@ var triptypehash = {
     "Cultural Treasures": "CulturalTreasures"
 }
 
+function analytics() {
+$('a[data-reveal-id]').click(function () {
+    console.log(['_trackEvent', 'Modal', 'Open', $(this).attr("data-reveal-id")]);
+    _gaq.push(['_trackEvent', 'Modal', 'Open', $(this).attr("data-reveal-id")]);
+    });
+}
+
 function resetSelection(){
   // //Selection containers
   var $selectionContainers = $("[data-selection]");
@@ -52,7 +59,7 @@ function renderModal(){
 
 function quizzSummary(){
     var summary = {
-        event: $('form div.custom a.current').text(),
+        event: $('form#tripType div.custom a.current').text(),
         tripType: $('#travelerType a[data-selected]').data('selection-value'),
         image_letters: []
     }
@@ -70,9 +77,9 @@ function fb_share(event,image_url){
        method: 'feed',
        name: 'Dreamfunder',
        caption: 'Your ' + event + ' trip, gifted by your family and friends',
-//       description: (
-//           'Your ' + event + 'trip, gifted by your family and friends'
-//       ),
+       description: (
+           'Tell your friends about your ideas for your dream trip'
+       ),
        link: 'http://dreamfunder.co',
        picture: image_url
       },
@@ -125,13 +132,22 @@ function shareme() {
       ,'fluid' : '16x7'
     });
 
+    analytics();
+
     //Temporarily show signup modal
     //$('#signupModal-3').reveal();
 
     //Show the DreamTrip modal based on the anchor
     if (window.location.hash == '#dreamTrip'){
         $('#dreamTrip').reveal();
+         _gaq.push(['_trackEvent', 'Modal', 'Open', 'SpecialOccasion']);
          window.location.hash = ''
+    }
+    //Show the Thanks modal based on the anchor
+    if (window.location.hash == '#ThankYou'){
+        $('#supporterThanks').reveal();
+         window.location.hash = ''
+         _gaq.push(['_trackEvent', 'Modal', 'Open', 'ThankYou']);
     }
     // Set the custom actions on the next button
     $('#activateActivities').on('click', function(event){ renderModal() });

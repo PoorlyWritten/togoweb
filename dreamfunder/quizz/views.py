@@ -5,6 +5,9 @@ from django.views.generic.edit import FormView
 from .models import Question, QuizzProfile
 from .forms import ReportForm, SupporterForm
 import json
+import datetime
+from django.utils.timezone import utc
+
 
 class QuestionsJsonMixin(object):
 
@@ -20,7 +23,7 @@ class QuestionsJsonMixin(object):
 
 
 class ReportFormView(FormView):
-    success_url = '/logout'
+    success_url = '/complete'
     form_class = ReportForm
 
     def form_valid(self, form):
@@ -28,7 +31,7 @@ class ReportFormView(FormView):
         return super(ReportFormView, self).form_valid(form)
 
 class SupporterFormView(FormView):
-    success_url = '/logout'
+    success_url = '/complete'
     form_class = SupporterForm
 
     def form_valid(self, form):
@@ -42,6 +45,7 @@ class SupporterFormView(FormView):
             obj = QuizzProfile.objects.get(**kwargs)
         except QuizzProfile.DoesNotExist:
             obj = QuizzProfile(**dict((k,v) for (k,v) in kwargs.items() if '__' not in k))
+        obj.quiz_completed = datetime.datetime.utcnow().replace(tzinfo=utc)
         obj.save()
 
         return super(SupporterFormView, self).form_valid(form)

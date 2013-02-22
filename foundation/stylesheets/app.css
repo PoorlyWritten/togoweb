@@ -6543,33 +6543,28 @@ issue
 }
 
 /* line 4, ../sass/_home.scss */
-.orbit-wrapper div.timer {
-  display: none;
-}
-
-/* line 9, ../sass/_home.scss */
 .hero {
   min-height: 600px;
   max-height: 600px;
   background: #2d2d2d;
   margin-bottom: 0;
 }
-/* line 16, ../sass/_home.scss */
+/* line 11, ../sass/_home.scss */
 .hero .content {
   position: relative;
 }
-/* line 20, ../sass/_home.scss */
+/* line 15, ../sass/_home.scss */
 .hero img.bg {
   position: absolute;
   z-index: -1;
   top: -15px;
   width: 100%;
   min-width: 842px;
-  margin-top: 0%;
-  -webkit-transition-property: margin-top;
-  -moz-transition-property: margin-top;
-  -o-transition-property: margin-top;
-  transition-property: margin-top;
+  top: 0%;
+  -webkit-transition-property: top;
+  -moz-transition-property: top;
+  -o-transition-property: top;
+  transition-property: top;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
@@ -6579,15 +6574,15 @@ issue
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 33, ../sass/_home.scss */
+/* line 28, ../sass/_home.scss */
 .hero.with-bullets {
   margin-bottom: 0;
 }
-/* line 37, ../sass/_home.scss */
+/* line 32, ../sass/_home.scss */
 .hero.with-bullets + .slider-nav + .orbit-bullets {
   bottom: 3px !important;
 }
-/* line 40, ../sass/_home.scss */
+/* line 35, ../sass/_home.scss */
 .hero.with-bullets + .slider-nav + .orbit-bullets > li {
   background: rgba(255, 255, 255, 0.5);
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
@@ -6600,16 +6595,16 @@ issue
   height: 10px;
   margin: 0 5px;
 }
-/* line 49, ../sass/_home.scss */
+/* line 44, ../sass/_home.scss */
 .hero.with-bullets + .slider-nav + .orbit-bullets > li.active {
   background: white;
 }
-/* line 58, ../sass/_home.scss */
+/* line 53, ../sass/_home.scss */
 .hero + .slider-nav .left,
 .hero + .slider-nav .right {
   background: none !important;
 }
-/* line 62, ../sass/_home.scss */
+/* line 57, ../sass/_home.scss */
 .hero + .slider-nav .left::after,
 .hero + .slider-nav .right::after {
   color: white;
@@ -6619,17 +6614,17 @@ issue
   content: "\f053" !important;
   height: 1em;
 }
-/* line 73, ../sass/_home.scss */
+/* line 68, ../sass/_home.scss */
 .hero + .slider-nav .left {
   margin-left: 30px;
 }
-/* line 77, ../sass/_home.scss */
+/* line 72, ../sass/_home.scss */
 .hero + .slider-nav .right {
   margin-right: 30px;
 }
 
 @media (min-width: 1280px) {
-  /* line 89, ../sass/_home.scss */
+  /* line 84, ../sass/_home.scss */
   .hero img.bg {
     margin-top: -40%;
     -webkit-transition-property: margin-top;
@@ -6646,13 +6641,13 @@ issue
     transition-timing-function: ease-in;
   }
 }
-/* line 99, ../sass/_home.scss */
+/* line 94, ../sass/_home.scss */
 .hero-sub-content {
   text-align: center;
   padding-top: 40px;
   min-height: 600px;
 }
-/* line 111, ../sass/_home.scss */
+/* line 106, ../sass/_home.scss */
 .hero-sub-content .logo {
   display: block;
   width: 180px;
@@ -6662,18 +6657,18 @@ issue
   background: url(/images/logo.png) no-repeat 0 0;
   margin: 0 auto 60px auto;
 }
-/* line 122, ../sass/_home.scss */
+/* line 117, ../sass/_home.scss */
 .hero-sub-content .hero-title,
 .hero-sub-content .hero-subtitle {
   color: white;
   font-size: 52px;
   text-shadow: 0 0 18px rgba(0, 0, 0, 0.75);
 }
-/* line 128, ../sass/_home.scss */
+/* line 123, ../sass/_home.scss */
 .hero-sub-content .hero-title {
   line-height: 0.8em;
 }
-/* line 132, ../sass/_home.scss */
+/* line 127, ../sass/_home.scss */
 .hero-sub-content .hero-subtitle {
   font-size: 39px;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -6681,12 +6676,12 @@ issue
   font-weight: 300;
   letter-spacing: -1px;
 }
-/* line 140, ../sass/_home.scss */
+/* line 135, ../sass/_home.scss */
 .hero-sub-content .primary.button {
   margin-top: 40px;
 }
 
-/* line 145, ../sass/_home.scss */
+/* line 140, ../sass/_home.scss */
 .hero-testimonial {
   position: absolute;
   background: rgba(255, 255, 255, 0.05);
@@ -6697,11 +6692,11 @@ issue
   -moz-box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
   padding: 5px;
-  bottom: 20px;
+  top: 380px;
   right: -10px;
   width: 360px;
 }
-/* line 156, ../sass/_home.scss */
+/* line 151, ../sass/_home.scss */
 .hero-testimonial > .content {
   padding: 15px 35px 10px 30px;
   background: rgba(255, 255, 255, 0.75);
@@ -6709,7 +6704,7 @@ issue
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 162, ../sass/_home.scss */
+/* line 157, ../sass/_home.scss */
 .hero-testimonial .image {
   position: absolute;
   right: 15px;
@@ -6725,7 +6720,7 @@ issue
   -moz-box-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
   box-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
 }
-/* line 173, ../sass/_home.scss */
+/* line 168, ../sass/_home.scss */
 .hero-testimonial .image > img {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
@@ -6734,7 +6729,7 @@ issue
   width: 100%;
   height: 100%;
 }
-/* line 181, ../sass/_home.scss */
+/* line 176, ../sass/_home.scss */
 .hero-testimonial .title {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -6742,21 +6737,21 @@ issue
   text-shadow: 0 1px 0 white;
   margin-top: 0;
 }
-/* line 189, ../sass/_home.scss */
+/* line 184, ../sass/_home.scss */
 .hero-testimonial .quote {
   font-size: 13px;
 }
-/* line 192, ../sass/_home.scss */
+/* line 187, ../sass/_home.scss */
 .hero-testimonial .quote p {
   margin: 0.5em 0 0.5em 0;
   line-height: 1.2em;
   text-shadow: 0 1px 0 white;
 }
-/* line 198, ../sass/_home.scss */
+/* line 193, ../sass/_home.scss */
 .hero-testimonial .quote p:first-child + p {
   position: relative;
 }
-/* line 201, ../sass/_home.scss */
+/* line 196, ../sass/_home.scss */
 .hero-testimonial .quote p:first-child + p::before {
   content: "";
   display: block;
@@ -6766,7 +6761,7 @@ issue
   border-top: 1px solid rgba(0, 0, 0, 0.6);
   margin-bottom: 7px;
 }
-/* line 214, ../sass/_home.scss */
+/* line 209, ../sass/_home.scss */
 .hero-testimonial .helping-users img {
   display: inline-block;
   width: 26px;
@@ -6777,23 +6772,23 @@ issue
   border: 2px solid rgba(255, 255, 255, 0.35);
 }
 
-/* line 226, ../sass/_home.scss */
+/* line 221, ../sass/_home.scss */
 .process {
   background: #2d2d2d;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-/* line 233, ../sass/_home.scss */
+/* line 228, ../sass/_home.scss */
 [class*=process-] {
   position: relative;
 }
 
-/* line 237, ../sass/_home.scss */
+/* line 232, ../sass/_home.scss */
 .process-arrow-after {
   margin-bottom: 42px;
 }
-/* line 240, ../sass/_home.scss */
+/* line 235, ../sass/_home.scss */
 .process-arrow-after::after {
   content: "";
   background: url(/images/process-arrow.png) no-repeat;
@@ -6804,14 +6799,15 @@ issue
   position: absolute;
   bottom: -60px;
   left: 50%;
+  z-index: 4000;
 }
 
-/* line 253, ../sass/_home.scss */
+/* line 249, ../sass/_home.scss */
 .process-arrow-before {
   margin-top: 84px;
 }
-/* line 256, ../sass/_home.scss */
-.process-arrow-before::after {
+/* line 252, ../sass/_home.scss */
+.process-arrow-before::before {
   content: "";
   background: url(/images/process-arrow.png) no-repeat;
   width: 112px;
@@ -6822,23 +6818,23 @@ issue
   top: -60px;
   left: 50%;
 }
-/* line 268, ../sass/_home.scss */
+/* line 264, ../sass/_home.scss */
 .process-arrow-before.process-arrow-shift-left::after {
   margin-left: -300px;
 }
 
-/* line 273, ../sass/_home.scss */
+/* line 269, ../sass/_home.scss */
 .dreams {
   margin: 20px 0 40px 0;
 }
-/* line 278, ../sass/_home.scss */
+/* line 274, ../sass/_home.scss */
 .dreams.simple .dream {
   padding: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 284, ../sass/_home.scss */
+/* line 280, ../sass/_home.scss */
 .dreams.simple .dream:hover,
 .dreams.simple .dream .large-wrap,
 .dreams.simple .dream .large {
@@ -6851,16 +6847,16 @@ issue
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 298, ../sass/_home.scss */
+/* line 294, ../sass/_home.scss */
 .dreams.activity-type .text {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
   font-weight: 300;
 }
-/* line 305, ../sass/_home.scss */
+/* line 301, ../sass/_home.scss */
 .dreams.dream-type > .row {
   margin-bottom: 0 !important;
 }
-/* line 309, ../sass/_home.scss */
+/* line 305, ../sass/_home.scss */
 .dreams .dream {
   display: block;
   margin: 20px 0;
@@ -6871,7 +6867,7 @@ issue
   color: #56d4c8;
   background: white;
 }
-/* line 317, ../sass/_home.scss */
+/* line 313, ../sass/_home.scss */
 .dreams .dream[data-selected] {
   color: white;
   -webkit-box-shadow: 0 0 15px #56d4c8;
@@ -6880,7 +6876,7 @@ issue
   border: 3px solid #56d4c8;
   position: relative;
 }
-/* line 323, ../sass/_home.scss */
+/* line 319, ../sass/_home.scss */
 .dreams .dream[data-selected]::before {
   line-height: 1em;
   display: block;
@@ -6903,15 +6899,15 @@ issue
   padding: .125em;
   text-align: center;
 }
-/* line 346, ../sass/_home.scss */
+/* line 342, ../sass/_home.scss */
 .dreams .dream[data-selected] .text::after {
   display: none !important;
 }
-/* line 350, ../sass/_home.scss */
+/* line 346, ../sass/_home.scss */
 .dreams .dream[data-selected] .large {
   margin-bottom: 0;
 }
-/* line 355, ../sass/_home.scss */
+/* line 351, ../sass/_home.scss */
 .dreams .dream:hover {
   color: white;
   -webkit-transform: scale(1.02);
@@ -6920,7 +6916,7 @@ issue
   -o-transform: scale(1.02);
   transform: scale(1.02);
 }
-/* line 360, ../sass/_home.scss */
+/* line 356, ../sass/_home.scss */
 .dreams .dream .large-wrap {
   -webkit-transform: rotate(4deg) translate(6px, -6px);
   -moz-transform: rotate(4deg) translate(6px, -6px);
@@ -6932,7 +6928,7 @@ issue
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   background: white;
 }
-/* line 366, ../sass/_home.scss */
+/* line 362, ../sass/_home.scss */
 .dreams .dream .large {
   -webkit-transform: rotate(-4deg) translate(-6px, 6px);
   -moz-transform: rotate(-4deg) translate(-6px, 6px);
@@ -6944,13 +6940,13 @@ issue
   overflow: hidden;
   margin-bottom: 10px;
 }
-/* line 374, ../sass/_home.scss */
+/* line 370, ../sass/_home.scss */
 .dreams .dream .large img {
   display: block;
   width: 100%;
   background: #00afa1;
 }
-/* line 380, ../sass/_home.scss */
+/* line 376, ../sass/_home.scss */
 .dreams .dream .large .text {
   display: block;
   position: absolute;
@@ -6964,7 +6960,7 @@ issue
   font-family: "brannboll_smalregular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   text-align: left;
 }
-/* line 393, ../sass/_home.scss */
+/* line 389, ../sass/_home.scss */
 .dreams .dream .large .text::after {
   content: "";
   display: block;
@@ -6975,23 +6971,23 @@ issue
   bottom: 11px;
   right: 10px;
 }
-/* line 406, ../sass/_home.scss */
+/* line 402, ../sass/_home.scss */
 .dreams .dream .small {
   position: relative;
 }
-/* line 409, ../sass/_home.scss */
+/* line 405, ../sass/_home.scss */
 .dreams .dream .small img {
   display: block;
   width: 48%;
 }
-/* line 413, ../sass/_home.scss */
+/* line 409, ../sass/_home.scss */
 .dreams .dream .small img:last-child {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-/* line 426, ../sass/_home.scss */
+/* line 422, ../sass/_home.scss */
 .dream-profile {
   border: 3px solid #56d4c8;
   -webkit-border-radius: 2px;
@@ -7003,7 +6999,7 @@ issue
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.5);
   text-align: left;
 }
-/* line 433, ../sass/_home.scss */
+/* line 429, ../sass/_home.scss */
 .dream-profile .dream-pretitle {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -7011,7 +7007,7 @@ issue
   color: #56d4c8;
   font-size: 26px;
 }
-/* line 440, ../sass/_home.scss */
+/* line 436, ../sass/_home.scss */
 .dream-profile .dream-pretitle::before {
   content: "“";
   font-size: 94px;
@@ -7021,7 +7017,7 @@ issue
   color: #ffc116;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
-/* line 452, ../sass/_home.scss */
+/* line 448, ../sass/_home.scss */
 .dream-profile .dream-title {
   font-size: 50px;
   color: white;
@@ -7031,7 +7027,7 @@ issue
   margin-top: -12px;
   margin-bottom: 30px;
 }
-/* line 462, ../sass/_home.scss */
+/* line 458, ../sass/_home.scss */
 .dream-profile .dream-title::after {
   content: "”";
   font-size: 60px;
@@ -7041,19 +7037,19 @@ issue
   color: #56d4c8;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
-/* line 473, ../sass/_home.scss */
+/* line 469, ../sass/_home.scss */
 .dream-profile .dreamer-avatar {
   display: block;
   width: 100%;
 }
-/* line 478, ../sass/_home.scss */
+/* line 474, ../sass/_home.scss */
 .dream-profile .dreamer-title {
   color: #56d4c8;
   font-weight: 500;
   font-size: 25px;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
-/* line 485, ../sass/_home.scss */
+/* line 481, ../sass/_home.scss */
 .dream-profile .dreamer-subtitle {
   color: #999;
   font-size: 12px;
@@ -7061,18 +7057,18 @@ issue
   margin-top: -10px;
   margin-bottom: 30px;
 }
-/* line 492, ../sass/_home.scss */
+/* line 488, ../sass/_home.scss */
 .dream-profile .dreamer-subtitle [class*=icon-] {
   color: white;
 }
-/* line 497, ../sass/_home.scss */
+/* line 493, ../sass/_home.scss */
 .dream-profile .dream-total {
   color: #56d4c8;
   font-weight: bold;
   font-size: 25px;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
-/* line 504, ../sass/_home.scss */
+/* line 500, ../sass/_home.scss */
 .dream-profile .dream-total-percentage {
   width: 75%;
   border: 1px solid #555555;
@@ -7087,7 +7083,7 @@ issue
   background: #2d2d2d;
   position: relative;
 }
-/* line 514, ../sass/_home.scss */
+/* line 510, ../sass/_home.scss */
 .dream-profile .dream-total-percentage .percentage-complete {
   background-color: #0097d4;
   *zoom: 1;
@@ -7103,7 +7099,7 @@ issue
   -moz-border-radius: 1px 0 0 1px;
   border-radius: 1px 0 0 1px;
 }
-/* line 524, ../sass/_home.scss */
+/* line 520, ../sass/_home.scss */
 .dream-profile .dream-time {
   color: #777;
   font-size: 13px;
@@ -7111,7 +7107,7 @@ issue
   position: relative;
   float: right;
 }
-/* line 531, ../sass/_home.scss */
+/* line 527, ../sass/_home.scss */
 .dream-profile .dream-time > div:first-child canvas {
   -webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.4);
   -moz-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.4);
@@ -7121,13 +7117,13 @@ issue
   border-radius: 100%;
   border: 1px solid #2d2d2d;
 }
-/* line 537, ../sass/_home.scss */
+/* line 533, ../sass/_home.scss */
 .dream-profile .dream-time .dream-time-progress {
   position: absolute;
   left: 0;
   top: 0;
 }
-/* line 543, ../sass/_home.scss */
+/* line 539, ../sass/_home.scss */
 .dream-profile .dream-time .dream-time-days {
   position: absolute;
   display: block;
@@ -7138,7 +7134,7 @@ issue
   color: white;
   font-size: 12px;
 }
-/* line 554, ../sass/_home.scss */
+/* line 550, ../sass/_home.scss */
 .dream-profile .dream-time .dream-time-days-text {
   position: absolute;
   display: block;
@@ -7151,11 +7147,11 @@ issue
   font-size: 8px !important;
   line-height: 1em;
 }
-/* line 567, ../sass/_home.scss */
+/* line 563, ../sass/_home.scss */
 .dream-profile .dream-time .emphasis-bright {
   color: #fff;
 }
-/* line 572, ../sass/_home.scss */
+/* line 568, ../sass/_home.scss */
 .dream-profile .fund-button {
   margin-top: 40px;
 }
@@ -7369,6 +7365,56 @@ body {
   -ms-columns: 5em 2;
   -o-columns: 5em 2;
   columns: 5em 2;
+}
+
+/* line 192, ../sass/_global.scss */
+.heading.alternate {
+  text-transform: none;
+}
+
+/* line 196, ../sass/_global.scss */
+.heading.cursive {
+  font-family: "brannboll_smalregular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: normal;
+  text-transform: none;
+}
+/* line 201, ../sass/_global.scss */
+.heading.cursive.emphasis-color {
+  color: #56d4c8;
+}
+
+/* line 206, ../sass/_global.scss */
+.heading.emphasis-bright {
+  color: white;
+}
+
+/* line 209, ../sass/_global.scss */
+p.leading {
+  color: #666;
+  font-weight: 300;
+}
+
+/* line 216, ../sass/_global.scss */
+.dreams.no-link .dream {
+  cursor: default;
+}
+/* line 219, ../sass/_global.scss */
+.dreams.no-link .dream:hover {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+  color: #56d4c8;
+}
+/* line 224, ../sass/_global.scss */
+.dreams.no-link .dream .text::after {
+  display: none;
+}
+
+/* line 232, ../sass/_global.scss */
+[role=contentinfo] a.emphasis-color {
+  color: #56d4c8;
 }
 
 /* line 2, ../sass/_modals.scss */
