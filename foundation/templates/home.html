@@ -24,25 +24,49 @@
 
     <section role="main">
 
-        <article class="process-one process-arrow-after dark-section">
+        <article class="process-intro process-arrow-after new-section">
+
+
+<div class="row">
+
+<div class="six columns centered tc">
+
+<h2 class="heading alternate">Take your dream trip!</h2>
+
+<p class="leading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur provident cum quibusdam voluptatibus maxime sed reprehenderit corrupti est doloribus totam cumque sint dolor nam itaque aspernatur temporibus ab debitis labore.</p>
+
+
+
+<h4 class="heading cursive emphasis-color">You're just a few steps away!</h4>
+
+
+
+</div>
+
+</div>
+
+
+
+</article>
+        <article class="process-one process-arrow-after dark-section process-arrow-before">
             
             <div class="row">
                 <div class="eleven columns centered tc">
                     <h1><img src="/images/process-1.png" alt="Create your Dream Trip"></h1>
 
-                    <div class="dreams">
+                    <div class="dreams no-link">
 
 
                         <div class="row">
                             <div class="three columns">
-                                <a class="dream" href="#">
+                                <a class="dream" >
                                     <div class="large-wrap">
 <div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/D%20Tropics.png" alt="Islands & Beaches"><div class="text">Islands & Beaches</div></div>
                                     </div>                          
                                 </a>
                             </div>                      
                             <div class="three columns">
-                                <a class="dream" href="#">
+                                <a class="dream" >
                                     <div class="large-wrap">
 <div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/E-Okavango-Mokoros-iStock_000002690619Small.png" alt="Immerse Yourself in New Cultures"><div class="text">Immerse Yourself in New Cultures</div></div>
                                     </div>      
@@ -51,7 +75,7 @@
                             </div>
 
                             <div class="three columns">
-                                <a class="dream" href="#">
+                                <a class="dream" >
                                     <div class="large-wrap">
 <div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/great_cities.png" alt="Great Cities"><div class="text">Great Cities</div></div>
                                     </div>
@@ -59,7 +83,7 @@
                             </div>
 
                             <div class="three columns">
-                                <a class="dream" href="#">
+                                <a class="dream" >
                                     <div class="large-wrap">
 <div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/Mountains%20200320.png" alt="Adventure and Explore"><div class="text">Adventure and Explore</div></div>
                                     </div>
@@ -71,14 +95,14 @@
 
                         <div class="row">
                             <div class="three columns">
-                                <a class="dream" href="#">
+                                <a class="dream" >
                                     <div class="large-wrap">
 <div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/Teaching%20re.png" alt="Do good"><div class="text">Do good</div></div>
                                     </div>                          
                                 </a>
                             </div>                      
                             <div class="three columns">
-                                <a class="dream" href="#">
+                                <a class="dream" >
                                     <div class="large-wrap">
 <div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/A-Taj-Mahal-BOM_00700_Taj_Mahalxxxx_002.png" alt="Cultural Treasures"><div class="text">Cultural Treasures</div></div>
                                     </div>      
@@ -87,7 +111,7 @@
                             </div>
 
                             <div class="three columns end">
-                                <a class="dream" href="#">
+                                <a class="dream" >
                                     <div class="large-wrap">
 <div class="large"><img src="http://assets.dreamfunder.co.s3.amazonaws.com/answer_images/Couple%20320%20300.jpg" alt="Just for two"><div class="text">Just for two</div></div>
                                     </div>
@@ -110,41 +134,7 @@
                 <div class="eight columns centered tc">
                     <h1><img src="/images/process-2.png" alt="Create your Dream Trip"></h1>
 
-                    <div class="dream-profile dark-textured-section">
-
-                        <h1 class="dream-pretitle">Help me get to <span class="emphasis-color">Hawaii</span></h1>
-                        <h2 class="dream-title">for my 18th Birthday!</h2>
-
-                        <div class="row">
-                            <div class="eight columns">
-                                <img src="/images/dreamer-avatar.jpg" alt="" class="dreamer-avatar"/>
-                            </div>
-                            <div class="four columns">
-                                <h3 class="dreamer-title">Samantha</h3>
-                                <h4 class="dreamer-subtitle"><i class="icon-map-marker"></i> Menlo Park, CA</h4>    
-
-                            <div class="dream-time">
-                                    <input class="dream-time-progress" data-thickness=".1" data-height="42" data-width="42" data-displayinput="false" value="75">
-                                    <span class="dream-time-days">30</span>
-                                    <span class="dream-time-days-text">days<br/>left</span>
-                                </div>
-
-                                <h5 class="dream-total">$3,500</h5>
-
-
-
-                                <div class="dream-total-percentage">
-                                    <div class="percentage-complete" style="width:70%">70%</div>
-                                </div>
-    
-                                
-                                <div class="button primary simple medium emphasis-bright fund-button">Fund My Trip!</div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
+                    <img src="https://s3.amazonaws.com/assets.dreamfunder.co/images/home-profile-preview.jpg" alt=""/>
 
                 </div>
             </div>
@@ -225,4 +215,73 @@ Questions = {% autoescape off %}{{ questions_json }}{% endautoescape %}
 
 <div id="travelerActivities" class="reveal-modal expand expand-limit">
 </div>
+{% endblock %}
+{% block footer %}
+<footer role="contentinfo">
+
+
+<div class="row">
+
+<div class="six columns centered tc">
+
+
+<a href="" class="button primary" data-reveal-id="signupModal-1">Sign Up!</a>
+
+
+
+<br/>
+
+<h4 class="heading cursive emphasis-bright">Want to help someone else get their Dream Trip?</h4>
+
+
+
+<div class="row">
+
+<div class="ten columns centered"><p class="">Want to send a loved one on a trip they will never forget?<a href="" data-reveal-id="signupModal-1" class="emphasis-color">Signup</a> and we will keep you up to date on when you can create a profile for them.</p>
+
+
+<br/><br/><br/>
+
+
+</div>
+
+</div>	 <h3 class="heading cursive emphasis-color">Like Us! Share the love!</h3>
+
+<p>
+
+<a href="http://twitter.com/dreamfunder" target="_blank"><i class="icon-twitter-sign icon-large"></i> Twitter</a>
+
+<a href="http://facebook.com/dreamfunder" target="_blank"><i class="icon-facebook-sign icon-large"></i> Facebook</a>
+
+<a href="http://pinterest.com/dreamfunder" target="_blank"><i class="icon-pinterest icon-large"></i> Pinterest</a>
+
+<a href="mailto:contact@dreamfunder.co" ><i class="icon-envelope-alt icon-large"></i> Contact Us</a>
+</p>
+
+
+
+</div>
+
+</div>
+
+
+
+<div class="lower">
+
+<div class="row">
+
+<div class="twelve columns tc">
+
+<p>
+
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
 {% endblock %}
