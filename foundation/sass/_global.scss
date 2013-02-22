@@ -187,3 +187,49 @@ padding:15px 0;
 .two-column {
 @include columns(5em 2);
 }
+
+//New stuff
+.heading.alternate {
+text-transform:none; 
+}
+
+.heading.cursive {
+font-family:$alternateFontFamily !important;
+font-weight:normal;
+text-transform:none;
+
+	&.emphasis-color {
+	color:$linkColor;
+	}
+}
+
+.heading.emphasis-bright {
+color:$white}
+
+p.leading {
+color:#666;
+font-weight:300;
+}
+
+.dreams.no-link {
+
+	.dream {
+	cursor:default;
+
+		&:hover {
+		@include transform(none);
+		color:$linkColor;
+		}
+
+		.text::after {
+		display:none;
+		}
+	}
+}
+
+[role=contentinfo] {
+
+	a.emphasis-color {
+	color:$linkColor
+	}
+}
