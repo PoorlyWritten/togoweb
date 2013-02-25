@@ -18,22 +18,25 @@
     <link rel="stylesheet" href="/stylesheets/app.css">
 
     <script src="/javascripts/foundation/modernizr.foundation.js"></script>
+    <script src="/javascripts/foundation/jquery.js"></script>
+    <script src="/javascripts/mustache.js"></script>
+    <script src="/javascripts/django.mustache.js"></script>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-10415910-5)']);
+  _gaq.push(['_setAccount', 'UA-10415910-5']);
   _gaq.push(['_setDomainName', 'dreamfunder.co']);
-  _gaq.push(['_setAllowLinker', true]);
   _gaq.push(['_trackPageview']);
-{% if user.is_staff %}
-  _gaq.push(['_setVar','exclude_me']);
-{% endif %}
 
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
+{% if user.is_staff %}
+  _gaq.push(['_setVar','exclude_me']);
+{% endif %}
 
 </script>
 
@@ -133,7 +136,6 @@
 {% endblock %}
 
     <!-- Included JS Files (Uncompressed) -->
-    <script src="/javascripts/foundation/jquery.js"></script>
     
     <script src="/javascripts/foundation/jquery.cookie.js"></script>
     
@@ -171,9 +173,7 @@
     
     <script src="/javascripts/foundation/jquery.placeholder.js"></script>
 
-    <script src="https://raw.github.com/janl/mustache.js/master/mustache.js"></script>
 
-    <script src="https://raw.github.com/mjumbewu/django-jstemplate/master/jstemplate/static/libs/django.mustache.js"></script>
     
 
   <!-- Application Javascript, safe to override -->

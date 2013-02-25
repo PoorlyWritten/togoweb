@@ -9,7 +9,7 @@ var triptypehash = {
 
 function analytics() {
 $('a[data-reveal-id]').click(function () {
-    console.log(['_trackEvent', 'Modal', 'Open', $(this).attr("data-reveal-id")]);
+    // console.log(['_trackEvent', 'Modal', 'Open', $(this).attr("data-reveal-id")]);
     _gaq.push(['_trackEvent', 'Modal', 'Open', $(this).attr("data-reveal-id")]);
     });
 }
@@ -49,7 +49,7 @@ function resetSelection(){
 }
 function renderModal(){
     var name = $('a[data-selected]').data('selection-value')
-    console.log("Name = " + name );
+    //console.log("Name = " + name );
     template = Mustache.template('activities')
     $('#travelerActivities').html(template.render(Questions[name]))
     resetSelection();
@@ -149,9 +149,19 @@ function shareme() {
          window.location.hash = ''
          _gaq.push(['_trackEvent', 'Modal', 'Open', 'ThankYou']);
     }
+
+
     // Set the custom actions on the next button
     $('#activateActivities').on('click', function(event){ renderModal() });
 
+    // Reset the pronouns
+    $('a[data-reveal-id=supporterEvent]').on('click', function(event) {
+            if  ($('form select[name=quiz_relationship]').val() == 'ME'){
+                $('span.pronoun').html('Your');
+            } else {
+                $('span.pronoun').html('Their');
+            }
+        });
     //Set the selections
     resetSelection();
 
@@ -194,10 +204,10 @@ function shareme() {
 
 
   // UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE8 SUPPORT AND ARE USING .block-grids
-  // $('.block-grid.two-up>li:nth-child(2n+1)').css({clear: 'both'});
-  // $('.block-grid.three-up>li:nth-child(3n+1)').css({clear: 'both'});
-  // $('.block-grid.four-up>li:nth-child(4n+1)').css({clear: 'both'});
-  // $('.block-grid.five-up>li:nth-child(5n+1)').css({clear: 'both'});
+   $('.block-grid.two-up>li:nth-child(2n+1)').css({clear: 'both'});
+   $('.block-grid.three-up>li:nth-child(3n+1)').css({clear: 'both'});
+   $('.block-grid.four-up>li:nth-child(4n+1)').css({clear: 'both'});
+   $('.block-grid.five-up>li:nth-child(5n+1)').css({clear: 'both'});
 
   // Hide address bar on mobile devices (except if #hash present, so we don't mess up deep linking).
   if (Modernizr.touch && !window.location.hash) {
@@ -213,6 +223,3 @@ function shareme() {
 
 
 })(jQuery, this);
-
-
-$('#activateActivities').on('click', function(event){ renderModal() });

@@ -24,31 +24,6 @@
 
     <section role="main">
 
-        <article class="process-intro process-arrow-after new-section">
-
-
-<div class="row">
-
-<div class="six columns centered tc">
-
-<h2 class="heading alternate">Take your dream trip!</h2>
-{% comment %}
-<p class="leading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur provident cum quibusdam voluptatibus maxime sed reprehenderit corrupti est doloribus totam cumque sint dolor nam itaque aspernatur temporibus ab debitis labore.</p>
-{% endcomment %}
-
-
-
-<h4 class="heading cursive emphasis-color">You're just a few steps away!</h4>
-
-
-
-</div>
-
-</div>
-
-
-
-</article>
         <article class="process-one process-arrow-after dark-section ">
             
             <div class="row">
@@ -185,7 +160,8 @@ Questions = {% autoescape off %}{{ questions_json }}{% endautoescape %}
       <p class="tc">
       <a href="{% url socialauth_begin 'facebook' %}?{{ redirect_querystring }}"><img src="/images/facebook-button.png" alt=""/></a>
       </p>
-      <!-- <a class="close-reveal-modal">&#215;</a> -->
+      <p class="lead tc">Don't use Facebook? <a href="" data-reveal-id="supporterRelationship">start here</a></p>
+<!-- <a class="close-reveal-modal">&#215;</a> -->
 
     </div>
 </div>
@@ -200,7 +176,7 @@ Questions = {% autoescape off %}{{ questions_json }}{% endautoescape %}
         Step 3 of 3
       </p>
 
-      <p class="lead tc">What type of traveller are you?</p>
+      <p class="lead tc">What sort of trip or vacation would you most like to take? (choose one)</p>
 
                 <div class="dreams dream-type simple" data-selection=".dream" data-selection-name="traveller-type">
 
@@ -208,7 +184,7 @@ Questions = {% autoescape off %}{{ questions_json }}{% endautoescape %}
 
                     </div>
                         <p class="tc">
-                            <div  class="button primary" id="activateActivities">Next</div>
+                            <a class="button primary" id="activateActivities">Next</a>
                         </p>
                     </div>
     </div>

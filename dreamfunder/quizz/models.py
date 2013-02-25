@@ -86,6 +86,7 @@ class QuizzProfile(models.Model):
     CHILD = 'CHILD'
     PARENT = 'PARENT'
     PARTNER = 'PARTNER'
+    ME      = 'ME'
     FRIEND = 'FRIEND'
     FAMILY  = 'FAMILY'
     RELATIONSHIP_CHOICES = (
@@ -98,6 +99,7 @@ class QuizzProfile(models.Model):
         (PARTNER,'My Partner'),
         (FRIEND,'My Friend'),
         (FAMILY,'Another Family Member'),
+        (ME,'My Self!'),
     )
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     quiz_started = models.DateTimeField(auto_now_add=True)

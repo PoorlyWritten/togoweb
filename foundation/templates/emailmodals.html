@@ -2,15 +2,13 @@
 {% csrf_token %}
 <div id="supporterRelationship" class="reveal-modal medium">
   <div class="wrap">
-      <h2 class="modal-title">Who's the lucky one?</h2>
+      <h2 class="modal-title">Whose Dream Trip?</h2>
       <p class="modal-process-status"> Step 1 of 3 </p>
-      <p class="lead tc">Who's the dream trip for?</p>
+      <p class="lead tc">Who would you like to plan a trip for?</p>
             <div class="row">
                 <div class="four columns centered">
                     <div class=row>
                       <select name=quiz_relationship style="display:none;" id="customDropdown">
-                         <option value=ME>Me!</option>
-                         <option value=PARTNER>My Partner</option>
                          <option value=CHILD>My Son</option>
                          <option value=CHILD>My Daughter</option>
                          <option value=PARENT>My Mother</option>
@@ -20,12 +18,12 @@
                          <option value=PARTNER>My Partner</option>
                          <option value=FRIEND>My Friend</option>
                          <option value=FAMILY>Other Family Member</option>
+                         <option value=FRIEND>My Self!</option>
                       </select>
                       <div class="custom dropdown">
-                        <a href="#" class="current">Me!</a>
+                        <a href="#" class="current">My Partner</a>
                         <a href="#" class="selector"></a>
                         <ul>
-                         <option value=ME>Me!</option>
                          <option value=CHILD>My Son</option>
                          <option value=CHILD>My Daughter</option>
                          <option value=PARENT>My Mother</option>
@@ -35,6 +33,7 @@
                          <option value=PARTNER>My Partner</option>
                          <option value=FRIEND>My Friend</option>
                          <option value=FAMILY>Other Family Member</option>
+                         <option value=FRIEND>My Self!</option>
                         </ul>
                       </div>
                     </div>
@@ -49,9 +48,9 @@
 </div>
 <div id="supporterEvent" class="reveal-modal medium">
   <div class="wrap">
-      <h2 class="modal-title"><span class="pronoun">Their</span> Dream Trip</h2>
+      <h2 class="modal-title"><span class=pronoun>Their</span> Dream Trip</h2>
       <p class="modal-process-status"> Step 2 of 3 </p>
-      <p class="lead tc">What's the special occasion?</p>
+      <p class="lead tc">What special occasion would you like to use DreamFunder for?</p>
             <div class="row">
                 <div class="four columns centered">
                     <div class=row>
@@ -91,10 +90,10 @@
 </div>
 <div id="supporterEmail" class="reveal-modal medium">
   <div class="wrap">
-      <h2 class="modal-title"><span class="pronoun">Their</span> Dream Trip</h2>
+      <h2 class="modal-title"><span class=pronoun>Their</span> Dream Trip</h2>
       <p class="modal-process-status"> Step 3 of 3 </p>
       <p class="lead tc">What is <strong>your</strong> email address?</p>
-        <p class="tc">We'll let you know when you can start planning.</p>
+        <p class="tc">We'll let you know when you can get started on their trip.</p>
             <div class="row">
                 <div class="four columns centered">
                     <div class=row>
@@ -113,7 +112,6 @@
 <div id="supporterThanks" class="reveal-modal medium">
   <div class="wrap">
       <h2 class="modal-title">Thank You!</h2>
-      <p class="lead tc">We'll contact you as soon as Dreamfunder is ready to go.</p>
- <a class="close-reveal-modal">&#215;</a>
+      <p class="lead tc">We'll contact you as soon as Dreamfunder is ready to go</p>
   </div>
 </div>
